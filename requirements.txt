@@ -1,5 +1,5 @@
 python-dotenv
-mistralai
+mistralai==1.8.1
 pdf2image
 pdfplumber
 langchain-core
@@ -11,4 +11,3 @@ langchain
 chromadb
 pytesseract
 opencv-python
-pytesseract
