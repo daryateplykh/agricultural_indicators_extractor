@@ -1,0 +1,13 @@
+python-dotenv
+mistralai
+pdf2image
+pdfplumber
+langchain-core
+langchain-chroma
+langchain-community
+langchain-huggingface
+sentence-transformers
+langchain
+chromadb
+pytesseract
+opencv-python
