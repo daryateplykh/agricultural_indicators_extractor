@@ -16,7 +16,7 @@ class Configuration:
          "BELGIUM", "Burkina Faso", "Cabo Verde",
          "Brazil", "Canada", "Benin",
          "Congo, Dem. Rep.", "Belgium",
-         "Denmark", "Fiji", "Panama"] 
+         "Denmark", "Fiji", "Panama", "BOTSWANA", ""] 
 
     @classmethod
     def initialize(cls):

@@ -6,18 +6,8 @@ from config import Configuration
 from country_year_extractor import CountryYearExtractor
 
 class TextPDFReader:
-
     def __init__(self):
         self.meta = CountryYearExtractor()
-
-    def process_pdfs(self):
-        results: list[Document] = []
-        for fname in os.listdir(Configuration.DATA_PATH):
-            path = os.path.join(Configuration.DATA_PATH, fname)
-            docs = self.process_single_pdf(path, fname)
-            if docs:
-                results.extend(docs)
-        return results
 
     def process_single_pdf(self, filepath: str, filename: str):
         country_chunks: dict[tuple[str, str], list[str]] = {}

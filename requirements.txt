@@ -11,3 +11,4 @@ langchain
 chromadb
 pytesseract
 opencv-python
+pytesseract
