@@ -17,14 +17,10 @@ class ScannedPDFReader:
         self.mistral_client = Mistral(api_key=Configuration.API_KEY)
 
     def preprocess_image(self, image: PILImage.Image) -> PILImage.Image:
-
         image = image.resize((image.width * 2, image.height * 2), PILImage.LANCZOS)
-
         image = image.convert('L')
-
         enhancer = ImageEnhance.Contrast(image)
         image = enhancer.enhance(2.0)
-
         image = image.point(lambda x: 0 if x < 180 else 255, '1')
         return image
 
@@ -72,10 +68,8 @@ class ScannedPDFReader:
         current_country = None
         current_year = "Unknown"
         for i, image in enumerate(images):
-            print(f"\n Страница {i+1}/{len(images)}")
             preprocessed = self.preprocess_image(image)
             tesseract_text = pytesseract.image_to_string(preprocessed, lang='eng', config='--psm 6')
-            print(f" Результат pytesseract: {repr(tesseract_text[:100])}...")
             c = self.meta.extract_country(tesseract_text)
             y = self.meta.extract_year(tesseract_text)
             if c:
@@ -87,29 +81,24 @@ class ScannedPDFReader:
             if not current_country:
                 print("Страна не найдена — пропуск страницы")
                 continue
-            found_keywords = self._get_found_keywords(tesseract_text)
-            if found_keywords:
-                print(f"  Найдены ключевые слова: {found_keywords} — отправляем страницу в Mistral OCR")
-                mistral_text = self.extract_text_mistral(image)
-                print(f"Результат Mistral OCR: {repr(mistral_text[:100])}...")
-                
-                #### print(" ????? Пустой текст от Mistral — пропуск")
-                if not mistral_text.strip():
-                    print(" ????? Пустой текст от Mistral — пропуск")
-                    continue
-                header = f"Country: {current_country}\nYear: {current_year}\nPage: {i}\n\n"
-                full_text = header + mistral_text
-                safe_name = re.sub(r"[^\w\-_.]", "_", f"{current_country}_{current_year}_page{i}.txt")
-                out_path = os.path.join(Configuration.OUTPUT_PATH, safe_name)
-                with open(out_path, "w", encoding="utf-8") as f:
-                    f.write(full_text)
-                print(f"Сохранён чанк: {safe_name}")
-                metadata = {
-                    "country": current_country,
-                    "year": current_year,
-                    "source": filename,
-                    "page": i,
-                    "id": f"{filename}:{current_country}:{current_year}:page{i}"
-                }
-                documents.append(Document(page_content=full_text, metadata=metadata))
+            mistral_text = self.extract_text_mistral(preprocessed)
+            print(f"Результат Mistral OCR: {repr(mistral_text[:100])}...")
+            if not mistral_text.strip():
+                print(" ????? Пустой текст от Mistral — пропуск")
+                continue
+            header = f"Country: {current_country}\nYear: {current_year}\nPage: {i}\n\n"
+            full_text = header + mistral_text
+            safe_name = re.sub(r"[^\w\-_.]", "_", f"{current_country}_{current_year}_page{i}.txt")
+            out_path = os.path.join(Configuration.OUTPUT_PATH, safe_name)
+            with open(out_path, "w", encoding="utf-8") as f:
+                f.write(full_text)
+            print(f"Сохранён чанк: {safe_name}")
+            metadata = {
+                "country": current_country,
+                "year": current_year,
+                "source": filename,
+                "page": i,
+                "id": f"{filename}:{current_country}:{current_year}:page{i}"
+            }
+            documents.append(Document(page_content=full_text, metadata=metadata))
         return documents 

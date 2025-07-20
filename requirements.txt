@@ -11,3 +11,5 @@ langchain
 chromadb
 pytesseract
 opencv-python
+pandas
+together
