@@ -1,0 +1,79 @@
+queries:
+  - country: Gambia
+    years: [1950]
+  #- country: Canada
+  #  years: [1950]
+  #- country: Argentina
+  #  years: [1930, 1950, 1960]
+indicators:
+  - Total number and Total area of holdings
+  - Total Area in Holdings, by Tenure - Area owned by the holder, Area rented from others, Area operated unter Colonia, Area rented with promise of sale
+  - Agricultural population - Total population
+  - Utilization of Land in Holding - Total area, Cropland, Permanent meadow and pasture, Wood or forest land, All other land
+  #- Employment in Agriculture - Holders and members of their families, Persons working for pay on the holdingm Employed temporarily
+  #- Wheat - Number of holdings reporting, Hectares, Metric tons
+  - Rice - Number of holdings reporting, Hectares, Metric tons
+  #- Sorghum - Number of holdings reporting, Hectares, Metric tons
+  - Maize - Number of holdings reporting, Hectares, Metric tons
+  - Millet - Number of holdings reporting, Hectares, Metric tons
+  #- Soybean - Number of holdings reporting, Hectares, Metric tons
+  - Edible dry beans - Number of holdings reporting, Hectares, Metric tons
+  - Edible dry peans - Number of holdings reporting, Hectares, Metric tons
+  #- Maize for food - Number of holdings reporting, Hectares, Metric tons
+ # - Vegetable garten  - Number of holdings reporting, Hectares, Metric tons
+ # - Agave - Number of holdings reporting, Hectares, Metric tons
+ # - Potatoes - Number of holdings reporting, Hectares, Metric tons
+  - Manioc - Number of holdings reporting, Hectares, Metric tons 
+  - Sweet potatoes - Number of holdings reporting, Hectares, Metric tons
+ # - Sweet potatoes and yams - Number of holdings reporting, Hectares, Metric tons
+  #- Cocoyams - Number of holdings reporting, Hectares, Metric tons
+  - Cotton - Number of holdings reporting, Hectares, Metric tons
+ # - Sisal and other hard fibers - Number of holdings reporting, Hectares, Metric tons
+  - All vegetables and melons for human consumption - Number of holdings reporting, Hectares, Metric tons
+  #- Sugar cane - Number of holdings reporting, Hectares, Metric tons
+  - Groundnuts - Number of holdings reporting, Hectares, Metric tons
+  #- Castor beans - Number of holdings reporting, Hectares, Metric tons
+  - Sesame - Number of holdings reporting, Hectares, Metric tons
+  #- Mustard - Number of holdings reporting, Hectares, Metric tons
+  - Tobacco - Number of holdings reporting, Hectares, Metric tons
+ # - Tubers and root crops - Number of holdings reporting, Hectares, Metric tons
+ # - Manioc (cassava) - Number of holdings reporting, Hectares, Metric tons
+ # - Sugar crane - Number of holdings reporting, Hectares, Metric tons
+  #- Ginger - Number of holdings reporting, Hectares, Metric tons
+#  - Kava pepper - Number of holdings reporting, Hectares, Metric tons
+  - Citrus fruits - Number of holdings reporting, Hectares, Metric tons
+ # - Kapok - Number of holdings reporting, Hectares, Metric tons
+  #- Sago - Number of holdings reporting, Hectares, Metric tons
+  #- Other fruit trees - Number of holdings reporting, Hectares, Metric tons
+  - Coconut - Number of holdings reporting, Hectares, Metric tons
+  - Bananas - Number of holdings reporting, Hectares, Metric tons
+  #- Pineapples - Number of holdings reporting, Hectares, Metric tons
+  #- Coffee - Number of holdings reporting, Hectares, Metric tons
+  - Tea - Number of holdings reporting, Hectares, Metric tons
+  - Cacao - Number of holdings reporting, Hectares, Metric tons
+  - Coconuts - Number of holdings reporting, Hectares, Metric tons
+  #- Balsam tree - Number of holdings reporting, Hectares, Metric tons
+  - Oil Plams - Number of holdings reporting, Hectares, Metric tons
+  #- Kola nuts - Number of holdings reporting, Hectares, Metric tons
+  #- Rubber- Number of holdings reporting, Hectares, Metric tons
+  - number of horses
+  - number of cattle
+  - number of sheep
+  - number of goats
+  - number of pigs
+  - number of poultry
+  #- Agricultural Technology - Tractors
+  #- Agricultural Technology - Trucks
+  #- Fertilizers and Soil Dressings - Total number of holdings reporting
+  #- Organic fertilizers
+  #- Chemical fertilizers
+  #- Irrigation - Number of holdings reporting
+  #- Irrigation - Area irrigated (hectares)
+
+
+  #- Total number and Total area of holdings
+  #- Number and area of holdings, by tenure
+  #- Total Area in Holdings, by Tenure - Area owned by the holder, Area rented from others, Area operated by managers 
+  #- Area owned by the holder
+  #- Total Area in Holdings, by Tenure – Area rented from others
+  #- Total Area in Holdings, by Tenure – Area operated by managers 

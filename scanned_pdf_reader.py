@@ -4,7 +4,7 @@ from pdf2image import convert_from_path
 import pytesseract
 from langchain_core.documents import Document
 from config import Configuration
-from country_year_extractor import CountryYearExtractor
+from country_extractor import CountryExtractor
 from mistralai import Mistral
 from PIL import Image as PILImage, ImageEnhance
 from io import BytesIO
@@ -13,7 +13,6 @@ import pdfplumber
 
 class ScannedPDFReader:
     def __init__(self):
-        self.meta = CountryYearExtractor()
         self.mistral_client = Mistral(api_key=Configuration.API_KEY)
 
     def preprocess_image(self, image: PILImage.Image) -> PILImage.Image:
@@ -55,50 +54,36 @@ class ScannedPDFReader:
             table_chunks.append(f"[Table {j}]\n{table_text}")
         return table_chunks
 
-    def _get_found_keywords(self, text: str) -> list:
-        if not text:
-            return []
-        text_lower = text.lower()
-        return [kw for kw in Configuration.KEYWORDS if kw.lower() in text_lower]
-
     def _process_single_pdf(self, filepath: str, filename: str) -> list[Document]:
-        print(f"\nОбработка сканированного PDF: {filename}")
         documents = []
         images = convert_from_path(filepath, dpi=300)
         current_country = None
         current_year = "Unknown"
+        num_pages = len(images)
+        for year in Configuration.YEARS:
+            if str(year) in filename:
+                current_year = str(year)
+                break
         for i, image in enumerate(images):
             preprocessed = self.preprocess_image(image)
-            tesseract_text = pytesseract.image_to_string(preprocessed, lang='eng', config='--psm 6')
-            c = self.meta.extract_country(tesseract_text)
-            y = self.meta.extract_year(tesseract_text)
-            if c:
-                current_country = c
-                print(f"Найдена страна: {current_country}")
-            if y != "Unknown":
-                current_year = y
-                print(f"Найден год: {current_year}")
-            if not current_country:
-                print("Страна не найдена — пропуск страницы")
-                continue
             mistral_text = self.extract_text_mistral(preprocessed)
-            print(f"Результат Mistral OCR: {repr(mistral_text[:100])}...")
+            current_country = CountryExtractor.extract_country(filename, i, mistral_text)
+            page_year = current_year
             if not mistral_text.strip():
-                print(" ????? Пустой текст от Mistral — пропуск")
                 continue
-            header = f"Country: {current_country}\nYear: {current_year}\nPage: {i}\n\n"
+            header = f"Country: {current_country}\nYear: {page_year}\nPage: {i}\n\n"
             full_text = header + mistral_text
-            safe_name = re.sub(r"[^\w\-_.]", "_", f"{current_country}_{current_year}_page{i}.txt")
+            safe_name = re.sub(r"[^\w\-_.]", "_", f"{current_country}_{page_year}_page{i}.txt")
             out_path = os.path.join(Configuration.OUTPUT_PATH, safe_name)
             with open(out_path, "w", encoding="utf-8") as f:
                 f.write(full_text)
-            print(f"Сохранён чанк: {safe_name}")
             metadata = {
                 "country": current_country,
-                "year": current_year,
+                "year": page_year,
                 "source": filename,
                 "page": i,
-                "id": f"{filename}:{current_country}:{current_year}:page{i}"
+                "id": f"{filename}:{current_country}:{page_year}:page{i}"
             }
             documents.append(Document(page_content=full_text, metadata=metadata))
+        documents = CountryExtractor.interpolate_unknown_countries(documents)
         return documents 

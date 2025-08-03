@@ -19,6 +19,9 @@ Use only the context below to answer the question.
 If the question includes multiple countries or multiple indicators, 
 return **all available values** for each **country separately**.
 
+If the question asks about data across multiple years, note that different years may have different parameters or indicators available. 
+Include all available data for each year, even if the parameters differ between years.
+
 Please format your answer as a Markdown table with the following columns:
 | Country | Year | Indicator | Value | Unit |
 
