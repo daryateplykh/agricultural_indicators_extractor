@@ -14,3 +14,6 @@ opencv-python
 pandas
 together
 rapidfuzz
+paddlepaddle
+paddleocr
+opencv-python

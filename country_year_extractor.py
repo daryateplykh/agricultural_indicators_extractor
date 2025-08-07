@@ -12,7 +12,7 @@ MANUAL_COUNTRY_MAPPING = {
     ("1950_1new.pdf", 6): "Australia",
 }
 
-class CountryExtractor:
+class CountryYearExtractor:
     @staticmethod
     def fuzzy_extract_country(text: str, threshold=80) -> str | None:
         if not text:
@@ -35,10 +35,16 @@ class CountryExtractor:
         if manual_country:
             return manual_country
         
-        fuzzy_country = CountryExtractor.fuzzy_extract_country(text, threshold=80)
+        fuzzy_country = CountryYearExtractor.fuzzy_extract_country(text, threshold=80)
         if fuzzy_country:
             return fuzzy_country
-        
+        return "Unknown"
+    
+    @staticmethod
+    def extract_year_from_filename(filename: str) -> str:
+        for year in Configuration.YEARS:
+            if str(year) in filename:
+                return str(year)
         return "Unknown"
 
     @staticmethod

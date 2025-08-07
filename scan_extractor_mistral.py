@@ -12,7 +12,7 @@ import base64
 import pdfplumber
 from pdf_manager import preprocess_image
 
-class ScannedPDFReader:
+class ScannedExtractorMistral:
     def __init__(self):
         self.mistral_client = Mistral(api_key=Configuration.API_KEY)
 
@@ -92,16 +92,12 @@ class ScannedPDFReader:
                 continue
             header = f"Country: {current_country}\nYear: {page_year}\nPage: {i}\n\n"
             full_text = header + mistral_text
-            safe_name = re.sub(r"[^\w\-_.]", "_", f"{current_country}_{page_year}_page{i}.txt")
-            out_path = os.path.join(Configuration.OUTPUT_PATH, safe_name)
-            with open(out_path, "w", encoding="utf-8") as f:
-                f.write(full_text)
             metadata = {
                 "country": current_country,
                 "year": page_year,
                 "source": filename,
                 "page": i,
-                "id": f"{filename}:{current_country}:{page_year}:page{i}"
+                "id": f"{filename}:{current_country}:{page_year}:page{i + 1}"
             }
             documents.append(Document(page_content=full_text, metadata=metadata))
         documents = CountryYearExtractor.interpolate_unknown_countries(documents)
