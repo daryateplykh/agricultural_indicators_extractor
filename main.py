@@ -1,7 +1,7 @@
 import argparse
 from config import Configuration
 from chroma_manager import ChromaManager
-from pdf_manager import process_all_pdfs
+from scan_extractor_mistral import process_all_pdfs
 
 def main():
     parser = argparse.ArgumentParser()

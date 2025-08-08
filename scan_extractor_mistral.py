@@ -10,7 +10,7 @@ from PIL import Image as PILImage, ImageEnhance
 from io import BytesIO
 import base64
 import pdfplumber
-from pdf_manager import preprocess_image
+from image_utils import preprocess_image
 
 class ScannedExtractorMistral:
     def __init__(self):
@@ -33,10 +33,7 @@ class ScannedExtractorMistral:
         right_half.save(buffer_right, format="JPEG")
         base64image_right = base64.b64encode(buffer_right.getvalue()).decode("utf-8")
         
-        debug_dir = "debug_images"
-        os.makedirs(debug_dir, exist_ok=True)
-        left_half.save(os.path.join(debug_dir, f"page_{page_num}_left_half.jpg"))
-        right_half.save(os.path.join(debug_dir, f"page_{page_num}_right_half.jpg"))
+
         
         ocr_response_left = self.mistral_client.ocr.process(
             model="mistral-ocr-latest",
@@ -92,6 +89,13 @@ class ScannedExtractorMistral:
                 continue
             header = f"Country: {current_country}\nYear: {page_year}\nPage: {i}\n\n"
             full_text = header + mistral_text
+            
+
+            safe_name = re.sub(r"[^\w\-_.]", "_", f"{current_country}_{page_year}_page{i}.txt")
+            out_path = os.path.join(Configuration.OUTPUT_PATH, safe_name)
+            with open(out_path, "w", encoding="utf-8") as f:
+                f.write(full_text)
+            
             metadata = {
                 "country": current_country,
                 "year": page_year,
@@ -101,4 +105,13 @@ class ScannedExtractorMistral:
             }
             documents.append(Document(page_content=full_text, metadata=metadata))
         documents = CountryYearExtractor.interpolate_unknown_countries(documents)
-        return documents 
+        return documents
+
+def process_all_pdfs():
+    docs = []
+    for fname in os.listdir(Configuration.DATA_PATH):
+        if not fname.lower().endswith('.pdf'):
+            continue
+        path = os.path.join(Configuration.DATA_PATH, fname)
+        docs.extend(ScannedExtractorMistral()._process_single_pdf(path, fname))
+    return docs 
