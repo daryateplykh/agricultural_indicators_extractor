@@ -20,15 +20,13 @@ class ScannedExtractorMistral:
         header_text = pytesseract.image_to_string(
             image.crop((0, 0, image.width, int(image.height * 0.12))), lang='eng', config='--psm 6')
         
-        width = image.width
-        mid_width = width // 2
+        from image_utils import smart_split_page
+        left_half, right_half = smart_split_page(image)
         
-        left_half = image.crop((0, 0, mid_width, image.height))
         buffer_left = BytesIO()
         left_half.save(buffer_left, format="JPEG")
         base64image_left = base64.b64encode(buffer_left.getvalue()).decode("utf-8")
         
-        right_half = image.crop((mid_width, 0, width, image.height))
         buffer_right = BytesIO()
         right_half.save(buffer_right, format="JPEG")
         base64image_right = base64.b64encode(buffer_right.getvalue()).decode("utf-8")

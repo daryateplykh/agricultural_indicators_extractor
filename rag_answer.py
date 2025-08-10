@@ -6,6 +6,7 @@ from dotenv import load_dotenv
 from langchain.prompts import ChatPromptTemplate
 from langchain_community.vectorstores import Chroma
 from langchain_community.embeddings import HuggingFaceEmbeddings
+from langchain_community.embeddings import FastEmbedEmbeddings
 from together import Together
 
 
@@ -35,7 +36,10 @@ Answer the question based on the above context: {question}
 """
 
 def get_embedding_function():
-    return HuggingFaceEmbeddings(model_name="sentence-transformers/all-MiniLM-L6-v2")
+    return HuggingFaceEmbeddings(model_name="sentence-transformers/all-MiniLM-L6-v2") 
+     #return FastEmbedEmbeddings(model_name="BAAI/bge-small-en-v1.5")  #  PADDLE
+  
+    
 
 def query_rag(query_text: str, save_csv: bool = True) -> str:
     embedding_function = get_embedding_function()
@@ -72,7 +76,6 @@ def query_rag(query_text: str, save_csv: bool = True) -> str:
         return ""
 
     if save_csv:
-        # Извлечение Markdown-таблицы
         table_lines = [line for line in answer.splitlines() if "|" in line]
         table_lines = [line for line in table_lines if not re.match(r"^\s*\|?\s*-+\s*\|", line)]
 
