@@ -9,12 +9,9 @@ from pdf2image import convert_from_path
 from paddleocr import PaddleOCR
 from langchain_core.documents import Document
 
-import sys
-sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-
 from config import Configuration
-from country_year_extractor import CountryYearExtractor
-from image_utils import preprocess_image, split_image_in_half
+from src.utils.country_year_extractor import CountryYearExtractor
+from src.utils.image_utils import preprocess_image, split_image_in_half, smart_split_page
 
 
 def extract_text_paddle(ocr: PaddleOCR, pil_img, year: str, header_ratio: float = 0.12) -> str:
@@ -26,7 +23,6 @@ def extract_text_paddle(ocr: PaddleOCR, pil_img, year: str, header_ratio: float 
     if year == '1930':
         left_img, right_img = split_image_in_half(pil_img)
     else:
-        from image_utils import smart_split_page
         left_img, right_img = smart_split_page(pil_img)
 
     left_np = np.array(left_img)

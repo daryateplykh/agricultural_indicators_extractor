@@ -3,10 +3,9 @@ import os
 import re
 import shutil
 import sys
-sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from config import Configuration
-from paddle_comparison.scan_extractor_paddle import process_pdf_paddle
+from src.data_processing.scan_extractor_paddle import process_pdf_paddle
 from paddleocr import PaddleOCR
 
 

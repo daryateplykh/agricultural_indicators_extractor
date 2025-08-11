@@ -4,14 +4,13 @@ from pdf2image import convert_from_path
 import pytesseract
 from langchain_core.documents import Document
 from config import Configuration
-from country_year_extractor import CountryYearExtractor
+from src.utils.country_year_extractor import CountryYearExtractor
 from mistralai import Mistral
 from PIL import Image as PILImage, ImageEnhance
 from io import BytesIO
 import base64
 import pdfplumber
-from image_utils import preprocess_image, split_image_in_half
-from image_utils import smart_split_page
+from src.utils.image_utils import preprocess_image, split_image_in_half, smart_split_page
 
 class ScannedExtractorMistral:
     def __init__(self):

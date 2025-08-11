@@ -1,7 +1,7 @@
 import argparse
 from config import Configuration
-from chroma_manager import ChromaManager
-from scan_extractor_mistral import process_all_pdfs
+from src.rag_core.chroma_manager import ChromaManager
+from src.data_processing.scan_extractor_mistral import process_all_pdfs
 
 def MainStartMistral():
     parser = argparse.ArgumentParser()

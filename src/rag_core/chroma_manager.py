@@ -1,9 +1,9 @@
 import os
 import shutil
 from langchain_core.documents import Document
+from config import Configuration
 from langchain_chroma import Chroma
 from langchain_huggingface import HuggingFaceEmbeddings
-from config import Configuration
 
 class ChromaManager:
     def __init__(self):

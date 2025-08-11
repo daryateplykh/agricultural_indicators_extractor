@@ -50,7 +50,7 @@ def query_rag(query_text: str, save_csv: bool = True) -> str:
 
     results = db.similarity_search_with_score(query_text, k=10)
     if not results:
-        print("Нет подходящих документов в базе.")
+        print("No matching documents found in the database.")
         return ""
 
     context_text = "\n\n---\n\n".join([doc.page_content for doc, _ in results])
@@ -70,9 +70,9 @@ def query_rag(query_text: str, save_csv: bool = True) -> str:
             top_p=0.7
         )
         answer = response.choices[0].message.content.strip()
-        print("\nОтвет:\n", answer)
+        print("\nAnswer:\n", answer)
     except Exception as e:
-        print(" Ошибка от Together API:", e)
+        print("Error from Together API:", e)
         return ""
 
     if save_csv:

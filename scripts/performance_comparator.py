@@ -5,11 +5,8 @@ from dataclasses import dataclass
 from pdf2image import convert_from_path
 from PIL import Image
 
-import sys
-sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-
-from scan_extractor_mistral import ScannedExtractorMistral
-from paddle_comparison.scan_extractor_paddle import extract_text_paddle
+from src.data_processing.scan_extractor_mistral import ScannedExtractorMistral
+from src.data_processing.scan_extractor_paddle import extract_text_paddle
 from paddleocr import PaddleOCR
 from config import Configuration
 
@@ -31,6 +28,7 @@ class PerformanceComparator:
         self.results = {}
         
     def compare_single_pdf(self, pdf_path: str, dpi: int = 200) -> Dict[str, PerformanceMetrics]:
+        filename = os.path.basename(pdf_path)
         try:
             images = convert_from_path(pdf_path, dpi=dpi)
         except Exception as e:
@@ -38,22 +36,28 @@ class PerformanceComparator:
             
         results = {}
         
-        mistral_metrics = self._test_mistral(images)
+        mistral_metrics = self._test_mistral(images, filename)
         results['mistral'] = mistral_metrics
         
-        paddle_metrics = self._test_paddle(images)
+        paddle_metrics = self._test_paddle(images, filename)
         results['paddle'] = paddle_metrics
         
         return results
     
-    def _test_mistral(self, images: List[Image.Image]) -> PerformanceMetrics:
+    def _test_mistral(self, images: List[Image.Image], filename: str) -> PerformanceMetrics:
         start_time = time.time()
         total_text = ""
         successful_pages = 0
         
+        current_year = "Unknown"
+        for year in Configuration.YEARS:
+            if str(year) in filename:
+                current_year = str(year)
+                break
+        
         for i, image in enumerate(images):
             try:
-                extracted_text = self.mistral_extractor.extract_text_mistral(image, i)
+                extracted_text = self.mistral_extractor.extract_text_mistral(image, current_year, i)
                 if extracted_text.strip():
                     total_text += extracted_text + "\n"
                     successful_pages += 1
@@ -71,14 +75,20 @@ class PerformanceComparator:
             success_rate=success_rate
         )
     
-    def _test_paddle(self, images: List[Image.Image]) -> PerformanceMetrics:
+    def _test_paddle(self, images: List[Image.Image], filename: str) -> PerformanceMetrics:
         start_time = time.time()
         total_text = ""
         successful_pages = 0
         
+        current_year = "Unknown"
+        for year in Configuration.YEARS:
+            if str(year) in filename:
+                current_year = str(year)
+                break
+
         for i, image in enumerate(images):
             try:
-                extracted_text = extract_text_paddle(self.paddle_ocr, image)
+                extracted_text = extract_text_paddle(self.paddle_ocr, image, current_year)
                 
                 if extracted_text:
                     total_text += extracted_text + "\n"
