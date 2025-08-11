@@ -10,18 +10,21 @@ from PIL import Image as PILImage, ImageEnhance
 from io import BytesIO
 import base64
 import pdfplumber
-from image_utils import preprocess_image
+from image_utils import preprocess_image, split_image_in_half
+from image_utils import smart_split_page
 
 class ScannedExtractorMistral:
     def __init__(self):
         self.mistral_client = Mistral(api_key=Configuration.API_KEY)
 
-    def extract_text_mistral(self, image: PILImage.Image, page_num: int = 0) -> str:
+    def extract_text_mistral(self, image: PILImage.Image, year: str, page_num: int = 0) -> str:
         header_text = pytesseract.image_to_string(
             image.crop((0, 0, image.width, int(image.height * 0.12))), lang='eng', config='--psm 6')
         
-        from image_utils import smart_split_page
-        left_half, right_half = smart_split_page(image)
+        if year == '1930':
+            left_half, right_half = split_image_in_half(image)
+        else:
+            left_half, right_half = smart_split_page(image)
         
         buffer_left = BytesIO()
         left_half.save(buffer_left, format="JPEG")
@@ -80,7 +83,7 @@ class ScannedExtractorMistral:
                 break
         for i, image in enumerate(images):
             preprocessed = preprocess_image(image)
-            mistral_text = self.extract_text_mistral(preprocessed, i)
+            mistral_text = self.extract_text_mistral(preprocessed, current_year, i)
             current_country = CountryYearExtractor.extract_country(filename, i, mistral_text)
             page_year = current_year
             if not mistral_text.strip():

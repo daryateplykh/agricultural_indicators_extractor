@@ -14,17 +14,20 @@ sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from config import Configuration
 from country_year_extractor import CountryYearExtractor
-from image_utils import preprocess_image
+from image_utils import preprocess_image, split_image_in_half
 
 
-def extract_text_paddle(ocr: PaddleOCR, pil_img, header_ratio: float = 0.12) -> str:
+def extract_text_paddle(ocr: PaddleOCR, pil_img, year: str, header_ratio: float = 0.12) -> str:
     H = int(pil_img.height * header_ratio)
     header_crop = pil_img.crop((0, 0, pil_img.width, H))
     header_np = np.array(header_crop)
     header_text = _ocr_np(ocr, header_np).strip()
 
-    from image_utils import smart_split_page
-    left_img, right_img = smart_split_page(pil_img)
+    if year == '1930':
+        left_img, right_img = split_image_in_half(pil_img)
+    else:
+        from image_utils import smart_split_page
+        left_img, right_img = smart_split_page(pil_img)
 
     left_np = np.array(left_img)
     right_np = np.array(right_img)
@@ -99,61 +102,39 @@ def collect_texts(result_obj) -> List[str]:
             uniq.append(t)
     return uniq
 
-def main():
-    parser = argparse.ArgumentParser(description="PDF -> OCR -> TXT (деление на 2 колонки)")
-    parser.add_argument("--dpi", type=int, default=200)
-    parser.add_argument("--reset", action="store_true")
-    args = parser.parse_args()
+def process_pdf_paddle(filepath: str, filename: str, ocr: PaddleOCR, dpi: int = 200) -> list[Document]:
+    documents = []
+    try:
+        images = convert_from_path(filepath, dpi=dpi)
+    except Exception as e:
+        print(f"Error converting PDF {filename}: {e}")
+        return []
 
-    Configuration.initialize()
+    current_year = "Unknown"
+    for year in Configuration.YEARS:
+        if str(year) in filename:
+            current_year = str(year)
+            break
 
-    if args.reset and os.path.exists(Configuration.OUTPUT_PATH):
-        shutil.rmtree(Configuration.OUTPUT_PATH)
+    for page_idx, pil_img in enumerate(images):
+        combo_text = extract_text_paddle(ocr, pil_img, current_year)
 
-    os.makedirs(Configuration.OUTPUT_PATH, exist_ok=True)
-
-    if not os.path.exists(Configuration.DATA_PATH):
-        return
-
-    pdf_files = [f for f in os.listdir(Configuration.DATA_PATH) if f.lower().endswith(".pdf")]
-    ocr = PaddleOCR(lang="en", use_textline_orientation=True)
-
-    for filename in pdf_files:
-        filepath = os.path.join(Configuration.DATA_PATH, filename)
-        
-        current_year = "Unknown"
-        for year in Configuration.YEARS:
-            if str(year) in filename:
-                current_year = str(year)
-                break
-        
-        try:
-            images = convert_from_path(filepath, dpi=args.dpi)
-        except Exception as e:
-            print(f"Ошибка при конвертации PDF {filename}: {e}")
+        if not combo_text.strip():
             continue
-
-        for page_idx, pil_img in enumerate(images):
-            combo_text = extract_text_paddle(ocr, pil_img)
-
-            if not combo_text.strip():
-                continue
-            
-            current_country = CountryYearExtractor.extract_country(filename, page_idx, combo_text)
-            
-            header = f"Country: {current_country}\nYear: {current_year}\nPage: {page_idx}\n\n"
-            full_text = header + combo_text
-            
-
-            safe_filename = re.sub(r"[^\w\-_.]", "_", f"{current_country}_{current_year}_page{page_idx}.txt")
-            out_path = os.path.join(Configuration.OUTPUT_PATH, safe_filename)
-            
-            try:
-                with open(out_path, "w", encoding="utf-8") as f:
-                    f.write(full_text)
-               
-            except Exception as e:
-                print(f"Ошибка при сохранении файла {safe_filename}: {e}")
-
-if __name__ == "__main__":
-    main()
+        
+        current_country = CountryYearExtractor.extract_country(filename, page_idx, combo_text)
+        
+        header = f"Country: {current_country}\nYear: {current_year}\nPage: {page_idx}\n\n"
+        full_text = header + combo_text
+        
+        metadata = {
+            "country": current_country,
+            "year": current_year,
+            "source": filename,
+            "page": page_idx,
+            "id": f"{filename}:{current_country}:{current_year}:page{page_idx + 1}"
+        }
+        documents.append(Document(page_content=full_text, metadata=metadata))
+        
+    documents = CountryYearExtractor.interpolate_unknown_countries(documents)
+    return documents

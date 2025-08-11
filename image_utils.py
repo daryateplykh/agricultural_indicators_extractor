@@ -96,4 +96,13 @@ def smart_split_page(image: Image.Image) -> Tuple[Image.Image, Image.Image]:
     
     left_column, right_column = split_columns(trimmed_image, split_x)
     
-    return left_column, right_column 
+    return left_column, right_column
+
+def split_image_in_half(image: Image.Image) -> Tuple[Image.Image, Image.Image]:
+    width, height = image.size
+    midpoint = width // 2
+    
+    left_half = image.crop((0, 0, midpoint, height))
+    right_half = image.crop((midpoint, 0, width, height))
+    
+    return left_half, right_half 
