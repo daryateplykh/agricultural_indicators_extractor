@@ -5,11 +5,11 @@ from config import Configuration
 from langchain_core.documents import Document
 
 MANUAL_COUNTRY_MAPPING = {
-    ("1950_1SamoeAustralia.pdf", 0): "American Samoa",
-    ("1950_1new.pdf", 3): "Australia",
-    ("1950_1new.pdf", 4): "Australia",
-    ("1950_1new.pdf", 5): "Australia",
-    ("1950_1new.pdf", 6): "Australia",
+    ("1960_10pages.pdf", 0): "Peru",
+    ("1960_10pages.pdf", 1): "Peru",
+    ("1960_10pages.pdf", 3): "Peru",
+    ("1930_10pages.pdf", 2): "Canada",
+    ("1930_10pages.pdf", 3): "Canada",
 }
 
 class CountryYearExtractor:

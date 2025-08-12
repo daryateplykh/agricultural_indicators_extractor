@@ -4,7 +4,6 @@ import cv2
 from typing import Tuple
 
 def preprocess_image(image: Image.Image) -> Image.Image:
-
     image = image.resize((image.width * 2, image.height * 2), Image.LANCZOS)
 
     if image.mode != 'RGB':
@@ -129,7 +128,16 @@ def split_columns(image: Image.Image, split_x: int) -> Tuple[Image.Image, Image.
 
 def smart_split_page(image: Image.Image) -> Tuple[Image.Image, Image.Image]:
     trimmed_image = trim_margins(image)
+    w, h = trimmed_image.size
+
     split_x = find_best_split_x(trimmed_image)
+
+    if split_x < (w * 0.4):
+        dpi = 200
+        extra_width_px = int((2.0 / 2.54) * dpi)
+        new_split_x = split_x + extra_width_px
+        split_x = min(new_split_x, w)
+        
     left_column, right_column = split_columns(trimmed_image, split_x)
     return left_column, right_column
 
@@ -146,4 +154,11 @@ def split_image_in_half(image: Image.Image) -> Tuple[Image.Image, Image.Image]:
     left_half = image.crop((0, 0, left_end, height))
     right_half = image.crop((right_start, 0, width, height))
     
-    return left_half, right_half 
+    return left_half, right_half
+
+def split_image_horizontally(image: Image.Image) -> Tuple[Image.Image, Image.Image]:
+    width, height = image.size
+    midpoint = height // 2
+    top_half = image.crop((0, 0, width, midpoint))
+    bottom_half = image.crop((0, midpoint, width, height))
+    return top_half, bottom_half 

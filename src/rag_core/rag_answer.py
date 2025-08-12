@@ -48,7 +48,7 @@ def query_rag(query_text: str, save_csv: bool = True) -> str:
         embedding_function=embedding_function
     )
 
-    results = db.similarity_search_with_score(query_text, k=10)
+    results = db.similarity_search_with_score(query_text, k=5)
     if not results:
         print("No matching documents found in the database.")
         return ""
