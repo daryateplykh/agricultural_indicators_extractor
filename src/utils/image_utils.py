@@ -159,6 +159,13 @@ def split_image_in_half(image: Image.Image) -> Tuple[Image.Image, Image.Image]:
 def split_image_horizontally(image: Image.Image) -> Tuple[Image.Image, Image.Image]:
     width, height = image.size
     midpoint = height // 2
-    top_half = image.crop((0, 0, width, midpoint))
-    bottom_half = image.crop((0, midpoint, width, height))
+    
+    dpi = 200
+    overlap_px = int((0.5 / 2.54) * dpi)
+
+    top_end = min(midpoint + overlap_px, height)
+    bottom_start = max(midpoint - overlap_px, 0)
+
+    top_half = image.crop((0, 0, width, top_end))
+    bottom_half = image.crop((0, bottom_start, width, height))
     return top_half, bottom_half 
