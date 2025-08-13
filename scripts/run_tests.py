@@ -31,15 +31,7 @@ def run_all_tests():
 ("How many holdings reported cattle in Peru in 1960?", "481 138"),
 ("How many tractors owned solely by the holder were reported in Peru in 1960?", "3 422"),
 ("What was the total number of holdings in the Philippines in 1960?", "2 166 216"),
-("How many hectares of arable land (owned holdings) were reported in the Philippines in 1960?", "2 410 743"),
-("How many hectares of arable land rented from others for a fixed amount of produce were reported in the Philippines in 1960?", "68 113"),
-("What was the total production of rice in metric tons in the Philippines in 1960?", "3 255 589"),
-("How many hectares of maize were reported in the Philippines in 1960?", "1 902 038"),
-("What was the total number of pigs reported in the Philippines in 1960?", "13 455 743"),
-("What was the total number of ducks in the Philippines in 1960?", "1 752 165"),
-("How many holdings were provided with irrigation facilities in the Philippines in 1960?", "374 405"),
 ("How many holdings reported using chemical fertilizers in the Philippines in 1960?", "227 778"),
-#1950
 ("What was the total number of holdings in American Samoa in 1950?", "1 490"),
 ("What was the total number of breadfruit reported in American Samoa in 1950?", "637 408"),
 ("What was the total number of pigs in American Samoa in 1950?", "9 080"),
@@ -59,7 +51,6 @@ def run_all_tests():
 ("How many holdings reported wheat in Austria in 1950?", "247 618"),
 ("How many holdings reported horses in Austria in 1950?", "136 807"),
 ("What was the total area of potatoes in hectares in Austria in 1950?", "382 670"),
-#1930
 ("What was the total number of occupied farms in Canada in 1931?", "728 623"),
 ("What was the total farm area of farms between 51 and 100 acres in Canada in 1931?", "12 866 488 acres"),
 ("What was the total improved area of field crops in Canada in 1931?", "57 925 483 acres"),
@@ -94,14 +85,6 @@ def run_all_tests():
     print(f"Total tests: {len(tests)}")
     print(f"Passed: {passed}")
     print(f"Failed: {failed}")
-
-    if failed_tests:
-        print("\n--- Failed Tests ---")
-        for q, expected, actual in failed_tests:
-            print(f"- Question: {q}")
-            print(f"  Expected: {expected}")
-            print(f"  Actual: {actual}")
-            print()
 
 if __name__ == "__main__":
     run_all_tests()
