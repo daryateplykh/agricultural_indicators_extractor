@@ -3,6 +3,7 @@ import re
 from typing import List, Tuple
 from langchain_core.documents import Document
 from config import Configuration
+import collections
 
 class ChunkManager:
 
@@ -41,3 +42,46 @@ class ChunkManager:
                 f.write(header + body)
             saved_files.append(path)
         return saved_files
+
+def aggregate_country_chunks(documents: list[Document]) -> list[Document]:
+
+    country_dir = Configuration.COUNTRY_CHUNKS_PATH
+    os.makedirs(country_dir, exist_ok=True)
+
+    country_docs = collections.defaultdict(list)
+    for doc in documents:
+        key = (
+            doc.metadata.get("country", "Unknown"),
+            doc.metadata.get("year", "Unknown"),
+            doc.metadata.get("source", "Unknown")
+        )
+        country_docs[key].append(doc)
+
+    aggregated_docs = []
+    for key, docs in country_docs.items():
+        country, year, source = key
+        
+        docs.sort(key=lambda d: d.metadata.get("page", 0))
+        
+
+        full_content = ""
+        for doc in docs:
+            page_num = doc.metadata.get("page", 'N/A')
+            full_content += doc.page_content + f"\n\n--- END OF PAGE {page_num} ---\n\n"
+        
+
+        metadata = {
+            "country": country,
+            "year": year,
+            "source": source,
+            "id": f"{source}:{country}:{year}"
+        }
+        agg_doc = Document(page_content=full_content, metadata=metadata)
+        aggregated_docs.append(agg_doc)
+
+
+        output_filename = os.path.join(country_dir, f"{country}_{year}.txt")
+        with open(output_filename, 'w', encoding='utf-8') as f:
+            f.write(full_content)
+            
+    return aggregated_docs

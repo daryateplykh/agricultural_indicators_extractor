@@ -1,104 +1,164 @@
 queries:
-  - country: Lesotho
-    years: [1960]
-  #- country: Canada
-  #  years: [1950]
-  #- country: Argentina
-  #  years: [1930, 1950, 1960]
-indicators:
+  - country: Ceylon
+    years:
+      - year: 1960
+        output_year: 1961
+
+indicator_groups:
+  - category: 0
+    indicators:
+      - Number and area of holdings - Number, Area
+      - Number and area of holdings, by tenure Holdings fully owned,Holdings rented from others, Holdings operated under mixed froms of tenure, Holdings not owned
+  - category: 1
+    indicators:
+       - Land Utilization - Arable land, Land under permanent crops, Permanent meadows and pastures, Cultivated Pasture, Number of holdings reporting, Wood or forest land,  All other land (area)
+  - category: 2
+    indicators:
+      - Barley - Number of holdings reporting, Area (total), Production
+      - Beans - Number of holdings reporting, Area (total), Production
+      - Coconut - Number of holdings reporting, Area (total), Production
+      - Coffee - Number of holdings reporting, Area (total), Production
+      - Cotton - Number of holdings reporting, Area (total), Production
+      - Hectares - Number of holdings reporting, Area (total), Production
+      - Lentils - Number of holdings reporting, Area (total), Production
+      - Maize - Number of holdings reporting, Area (total), Production
+      - Manioc - Number of holdings reporting, Area (total), Production
+      - Millet - Number of holdings reporting, Area (total), Production
+      - Oats - Number of holdings reporting, Area (total), Production
+      - Potatoes - Number of holdings reporting, Area (total), Production
+      - Rice - Number of holdings reporting, Area (total), Production
+      - Sesame - Number of holdings reporting, Area (total), Production
+      - Sorghum - Number of holdings reporting, Area (total), Production
+      - Tobacco - Number of holdings reporting, Area (total), Production
+      - Wheat - Number of holdings reporting, Area (total), Production
+      - Yams - Number of holdings reporting, Area (total), Production
+  - category: 3
+    indicators:
+      - Horses - Number of holdings reporting, Number
+      - Cattle - Number of holdings reporting, Number
+      - Sheep - Number of holdings reporting, Number
+      - Buffaloes - Number of holdings reporting, Number
+      - Goats - Number of holdings reporting, Number
+      - Pigs - Number of holdings reporting, Number
+      - Camels - Number of holdings reporting, Number
+      - Poultry - Number of holdings reporting, Number
+  - category: 4
+    indicators:
+     # - Employment in Agriculture - All persons (Male, Female), Holders and unpaid members of their households(Male, Female), Persons working for pay on the holding(Male, Female)
+  - category: 5
+    indicators:
+     # - Farm Population - All persons (Male, Female), Holders and members of their households(Male, Female), Other persons living on the holding(Male, Female), Farm population by main occupation(Male, Female)
+  - category: 6
+    indicators:
+      - Tractors - Number of holdings reporting, Number
+      - Plows - Number of holdings reporting, Number
+      - Iron plows - Number of holdings reporting, Number
+      - Disk plows - Number of holdings reporting, Number
+      - wood plows - Number of holdings reporting, Number
+      - ridging plows - Number of holdings reporting, Number
+      - tine harrows - Number of holdings reporting, Number
+      -  Rotary tillers - Number of holdings reporting, Number
+      - Disk harrows - Number of holdings reporting, Number
+      - cultivators - Number of holdings reporting, Number
+      - hoes - Number of holdings reporting, Number
+      - seed drills - Number of holdings reporting, Number
+      - sprayers - Number of holdings reporting, Number
+      - dusters - Number of holdings reporting, Number
+      - mowers - Number of holdings reporting, Number
+      - rakes - Number of holdings reporting, Number
+      - reapers - Number of holdings reporting, Number
+      - binders - Number of holdings reporting, Number
+      - combines(harvest-threshers) - Number of holdings reporting, Number
+      - corn pickers - Number of holdings reporting, Number
+      - potato-harvesting machinery - Number of holdings reporting, Number 
+      - sugar-beet harvesting machinery - Number of holdings reporting, Number
+      - threshers - Number of holdings reporting, Number
+      - hay balers - Number of holdings reporting, Number
+      - sugarcane crushers - Number of holdings reporting, Number
+      - carts - Number of holdings reporting, Number
+      - jeeps - Number of holdings reporting, Number
+      - Station wagons - Number of holdings reporting, Number
+      - trucks - Number of holdings reporting, Number
+      - automobiles - Number of holdings reporting, Number
+  - category: 7
+    indicators:
+      - Land irrigated (Area , Number of holdings reporting)
+      - Area of land drained (Area , Number of holdings reporting)
+  - category: 8
+    indicators:
+      - Fertilizers - Organic fertilizers, Inorganic fertilizers, Mixed fertilizers (Number of holdings reporting, Area)
+
+
+
+  
+
+
+
+
+
+
+
+#A
  # - Total number and Total area of holdings
+  ##- Number and Area of Holdings by Tenure - Area owned by the holder, Area rented from others, Area operated unter other forms of tenure, Holdings operated under mixed forms of tenure
+  #- Total Area in Holdings, by Tenure - Area owned by the holder, Area rented from others, Area operated under other forms of tenure
+#B
+ # - Utilization of Land in Holding - Total area, Cropland, Permanent meadow and pasture, Wood or forest land, All other land
+#C
+ # - AGRICULTURAL POPULATION - Total population, Number of holdings reporting, Number of persons in holders' households, Number of persons reported, Male, Female
+#D
+ # - Employment in Agriculture - Number of persons
+  #- Employment in Agriculture - Holders and members of their families, persons working for pay, Persons working for pay on the holdingm Employed temporarily (Male, female)
+  #- Employment in Agriculture - Total male tax-payers, male tax payers engaged in agriculture - total number 
+
+#
  # - Fragmentation
  # - Number and area of holdings with absentee and nonabsentee holders
- ## - Total Area in Holdings, by Tenure - Area owned by the holder, Area rented from others, Area operated unter Colonia, Area rented with promise of sale
  # - Agricultural population - Total population, Number of persons in holders households
   #- Utilization of Land in Holding - Total area, Cropland, Permanent meadow and pasture, Wood or forest land, All other land
   #- Employment in Agriculture - Holders and members of their families, Persons working for pay on the holdingm Employed temporarily
-  #- Wheat - Number of holdings reporting, Hectares, Metric tons
-  #- Barley - Number of holdings reporting, Hectares, Metric tons
-  #- Oats - Number of holdings reporting, Hectares, Metric tons
+# F
+  #- Horses - Number of holdings reporting, Number
+  #- Cattle - Number of holdings reporting, Number
+  #- Sheep - Number of holdings reporting, Number
+  #- Buffaloes - Number of holdings reporting, Number
+  #- Goats - Number of holdings reporting, Number
+  #- Buffalo - Number of holdings reporting, Number
+  #- Pigs - Number of holdings reporting, Number
+  #- Camels - Number of holdings reporting, 
+#  - Chickens - Number of holdings reporting, Number
+#G
+ # - Number of tractors
+ # - Number of reapers
+ # - Number of threshers
+ # - Number of trucks
+  #- Number of automobiles
+#H
+  #- Application of organic or chemical fertilizers 
+#I
+#  - Irrigarion   
+#E
   #- Rice - Number of holdings reporting, Hectares, Metric tons
-  #- Sorghum - Number of holdings reporting, Hectares, Metric tons
- # - Maize - Number of holdings reporting, Hectares, Metric tons
-#  - Millet - Number of holdings reporting, Hectares, Metric tons
-  #- Soybean - Number of holdings reporting, Hectares, Metric tons
+  #- Millet and sorghum - Number of holdings reporting, Hectares, Metric tons
+  #- Maize - Number of holdings reporting, Hectares, Metric tons
   #- Edible dry beans - Number of holdings reporting, Hectares, Metric tons
-  #- Lentils - Number of holdings reporting, Hectares, Metric tons
-  #- Chick peas - Number of holdings reporting, Hectares, Metric tons
-  #- Vetches - Number of holdings reporting, Hectares, Metric tons
-  #- Edible dry peans - Number of holdings reporting, Hectares, Metric tons
-  #- Other legumes for grain - Number of holdings reporting, Hectares, Metric tons
-  #- Maize for food - Number of holdings reporting, Hectares, Metric tons
- # - Vegetable garten  - Number of holdings reporting, Hectares, Metric tons
- # - Agave - Number of holdings reporting, Hectares, Metric tons
- # - Potatoes - Number of holdings reporting, Hectares, Metric tons
-  #- Manioc - Number of holdings reporting, Hectares, Metric tons 
-  #- Potatoes - Number of holdings reporting, Hectares, Metric tons
-  #- Alfalfa - Number of holdings reporting, Hectares, Metric tons
-  #- Immature grain for fodder - Number of holdings reporting, Hectares, Metric tons
-# - Leguminous cpors for fodder - Number of holdings reporting, Hectares, Metric tons
- # - Sweet potatoes and yams - Number of holdings reporting, Hectares, Metric tons
-  #- Cocoyams - Number of holdings reporting, Hectares, Metric tons
-  #- Cotton - Number of holdings reporting, Hectares, Metric tons
- # - Sisal and other hard fibers - Number of holdings reporting, Hectares, Metric tons
-  #- All vegetables and melons for human consumption - Number of holdings reporting, Hectares, Metric tons
-  #- Flax - Number of holdings reporting, Hectares, Metric tons
-  #- Hemp - Number of holdings reporting, Hectares, Metric tons
+  #- Edible dry peas - Number of holdings reporting, Hectares, Metric tons
+  #- Manioc - Number of holdings reporting, Hectares, Metric tons
+  #- Sweet potatoes and yams - Number of holdings reporting, Hectares, Metric tons
   #- Sugar cane - Number of holdings reporting, Hectares, Metric tons
+  #- Cotton - Number of holdings reporting, Hectares, Metric tons
   #- Groundnuts - Number of holdings reporting, Hectares, Metric tons
-  #- Castor beans - Number of holdings reporting, Hectares, Metric tons
-  #- Sesame - Number of holdings reporting, Hectares, Metric tons
-  #- Mustard - Number of holdings reporting, Hectares, Metric tons
   #- Tobacco - Number of holdings reporting, Hectares, Metric tons
-  #- Grapes - Number of holdings reporting, Hectares, Metric tons
-  #- Olives - Number of holdings reporting, Hectares, Metric tons
-  #- Cumin seed - Number of holdings reporting, Hectares, Metric tons
-  #- Citrus trees - Number of holdings reporting, Hectares, Metric tons
-  #- Carobs - Number of holdings reporting, Hectares, Metric tons
- # - Tubers and root crops - Number of holdings reporting, Hectares, Metric tons
- # - Manioc (cassava) - Number of holdings reporting, Hectares, Metric tons
- # - Sugar crane - Number of holdings reporting, Hectares, Metric tons
-  #- Ginger - Number of holdings reporting, Hectares, Metric tons
-#  - Kava pepper - Number of holdings reporting, Hectares, Metric tons
- # - Citrus fruits - Number of holdings reporting, Hectares, Metric tons
- # - Kapok - Number of holdings reporting, Hectares, Metric tons
-  #- Sago - Number of holdings reporting, Hectares, Metric tons
-  #- All other cultivated or planted fruit trees - Number of holdings reporting, Hectares, Metric tons
-  #- Coconut - Number of holdings reporting, Hectares, Metric tons
-  #- Bananas - Number of holdings reporting, Hectares, Metric tons
-  #- Pineapples - Number of holdings reporting, Hectares, Metric tons
   #- Coffee - Number of holdings reporting, Hectares, Metric tons
-  #- Broom corn - Number of holdings reporting, Hectares, Metric tons
   #- Cacao - Number of holdings reporting, Hectares, Metric tons
-  #- Balsam tree - Number of holdings reporting, Hectares, Metric tons
-  #- Oil Plams - Number of holdings reporting, Hectares, Metric tons
-  #- Kola nuts - Number of holdings reporting, Hectares, Metric tons
-  #- Rubber- Number of holdings reporting, Hectares, Metric tons
- # - Wheat - Area, Production
- # - Sorghum - Number of holdings reportingArea, Production
- # - Maize - Area, Production
- # - Barley - Area, Production
- # - Oats - Area, Production
- # - Beans - Area, Production
- # - Peas - Area, Production
- # - Other crops on arable land - Area, Production
-  - Horses - Number of holdings reporting, Number
-  - Cattle - Number of holdings reporting, Number
-  - Sheep - Number of holdings reporting, Number
-  - Goats - Number of holdings reporting, Number
-  - Pigs - Number of holdings reporting, Number
-  - Poultry - Number of holdings reporting, Number
-  - Tractors - Number of holdings reporting, Number
-  - Plows - Number of holdings reporting, Number
-  - Harrows - Number of holdings reporting, Number
-  - Cultivators - Number of holdings reporting, Number
-  - Hoes - Number of holdings reporting, Number
-  - Planters - Number of holdings reporting, Number
-  - Carts (Two-wheel) - Number of holdings reporting, Number
-  - Wagons and carts (Four-wheel) - Number of holdings reporting, Number
-  - motorcars, trucks, lorries - Number of holdings reporting, Number
-  #- number of bees
-  #- number of camels
-  #- number of silkworms
+ # - Coconuts - Number of holdings reporting, Hectares, Metric tons
+  #- Yams - Number of holdings reporting, Hectares, Metric tons
+  #- Sugar cane - Number of holdings reporting, Hectares, Metric tons
+  #- Cacao - Number of holdings reporting, Hectares, Metric tons
+  #- Coconuts - Number of holdings reporting, Hectares, Metric tons
+  #- Rubber - Number of holdings reporting, Hectares, Metric tons
+
+  
   #- Agricultural Technology - Tractors
   #- Agricultural Technology - Trucks
   #- Fertilizers and Soil Dressings - Total number of holdings reporting
@@ -114,3 +174,4 @@ indicators:
   #- Area owned by the holder
   #- Total Area in Holdings, by Tenure – Area rented from others
   #- Total Area in Holdings, by Tenure – Area operated by managers 
+ 

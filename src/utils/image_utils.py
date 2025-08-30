@@ -1,18 +1,42 @@
-from PIL import Image, ImageEnhance
+from PIL import Image, ImageEnhance, ImageFilter
 import numpy as np
 import cv2
 from typing import Tuple
 
-def preprocess_image(image: Image.Image) -> Image.Image:
-    image = image.resize((image.width * 2, image.height * 2), Image.LANCZOS)
+def preprocess_image(image: Image.Image, year: str = None) -> Image.Image:
+    if str(year) == '1930':
+        image = image.convert('L')
+        
+        enhancer = ImageEnhance.Contrast(image)
+        image = enhancer.enhance(2.0)
+        
+        open_cv_image = np.array(image)
+        
+        denoised_image = cv2.medianBlur(open_cv_image, 3)
+        
+        binary_image = cv2.adaptiveThreshold(denoised_image, 255, cv2.ADAPTIVE_THRESH_GAUSSIAN_C, 
+                                             cv2.THRESH_BINARY, 11, 4)
 
-    if image.mode != 'RGB':
-        image = image.convert('RGB')
+        kernel = np.ones((1, 1), np.uint8)
+        opening = cv2.morphologyEx(binary_image, cv2.MORPH_OPEN, kernel, iterations=1)
+        
+        processed_image = Image.fromarray(opening)
 
-    enhancer = ImageEnhance.Contrast(image)
-    image = enhancer.enhance(2.0)
+    else:
+        image = image.convert('L')
+        open_cv_image = np.array(image)
+        denoised_image = cv2.medianBlur(open_cv_image, 3)
+        sharpening_kernel = np.array([[-1,-1,-1], 
+                                      [-1, 9,-1],
+                                      [-1,-1,-1]])
+        sharpened_image = cv2.filter2D(denoised_image, -1, sharpening_kernel)
+        binary_image = cv2.adaptiveThreshold(sharpened_image, 255, cv2.ADAPTIVE_THRESH_GAUSSIAN_C, 
+                                             cv2.THRESH_BINARY, 15, 4)
+        kernel = np.ones((1,1), np.uint8)
+        opening = cv2.morphologyEx(binary_image, cv2.MORPH_OPEN, kernel, iterations=1)
+        processed_image = Image.fromarray(opening)
     
-    return image 
+    return processed_image.convert('RGB')
 
 def trim_margins(image: Image.Image, pad: int = 5) -> Image.Image:
     img_array = np.array(image)
@@ -132,11 +156,15 @@ def smart_split_page(image: Image.Image) -> Tuple[Image.Image, Image.Image]:
 
     split_x = find_best_split_x(trimmed_image)
 
-    if split_x < (w * 0.4):
-        dpi = 200
-        extra_width_px = int((2.0 / 2.54) * dpi)
+    if split_x < (w * 0.45):
+        extra_width_px = int(w * 0.10)
         new_split_x = split_x + extra_width_px
         split_x = min(new_split_x, w)
+    elif split_x > (w * 0.55):
+        dpi = 200
+        extra_width_px = int((2.0 / 2.54) * dpi)  # 2 cm
+        new_split_x = split_x - extra_width_px
+        split_x = max(new_split_x, 0)
         
     left_column, right_column = split_columns(trimmed_image, split_x)
     return left_column, right_column
@@ -168,4 +196,14 @@ def split_image_horizontally(image: Image.Image) -> Tuple[Image.Image, Image.Ima
 
     top_half = image.crop((0, 0, width, top_end))
     bottom_half = image.crop((0, bottom_start, width, height))
-    return top_half, bottom_half 
+    return top_half, bottom_half
+
+def is_image_blank(image: Image.Image, threshold=10) -> bool:
+    if image.mode != 'L':
+        image_gray = image.convert('L')
+    else:
+        image_gray = image
+        
+    img_array = np.array(image_gray)
+    std_dev = np.std(img_array)
+    return std_dev < threshold 

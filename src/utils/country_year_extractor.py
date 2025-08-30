@@ -5,11 +5,26 @@ from config import Configuration
 from langchain_core.documents import Document
 
 MANUAL_COUNTRY_MAPPING = {
-    ("1960_10pages.pdf", 0): "Peru",
-    ("1960_10pages.pdf", 1): "Peru",
-    ("1960_10pages.pdf", 3): "Peru",
-    ("1930_10pages.pdf", 2): "Canada",
-    ("1930_10pages.pdf", 3): "Canada",
+    ("1960_3.1UntilLebanon.pdf", 7): "Ceylon",
+    ("1960_3.1UntilLebanon.pdf", 8): "Ceylon",
+    ("1960_3.1UntilLebanon.pdf", 9): "Ceylon",
+    ("1960_3.1UntilLebanon.pdf", 10): "Ceylon",
+    ("1960_3.1UntilLebanon.pdf", 39): "Indinesia, Farm households",
+    ("1960_3.1UntilLebanon.pdf", 40): "Indinesia, Farm households",
+
+    ("1960_3.1UntilLebanon.pdf", 41): "Indinesia, Estates",
+    ("1960_3.1UntilLebanon.pdf", 42): "Indinesia, Estates",
+
+    ("1960_3.1UntilLebanon.pdf", 56): "Kenya, African holdings",
+    
+
+}
+
+MANUAL_CATEGORY_MAPPING = {
+    # Example:
+    # ("1960_3.2AfterLebanon.pdf", 5): 2,
+    # ("1960_3.2AfterLebanon.pdf", 6): 2,
+    # ("1960_3.2AfterLebanon.pdf", 7): 3,
 }
 
 class CountryYearExtractor:
@@ -35,10 +50,15 @@ class CountryYearExtractor:
         if manual_country:
             return manual_country
         
-        fuzzy_country = CountryYearExtractor.fuzzy_extract_country(text, threshold=80)
-        if fuzzy_country:
-            return fuzzy_country
+        if text:
+            fuzzy_country = CountryYearExtractor.fuzzy_extract_country(text, threshold=80)
+            if fuzzy_country:
+                return fuzzy_country
         return "Unknown"
+
+    @staticmethod
+    def extract_category(filename: str, page_index: int) -> int | str:
+        return MANUAL_CATEGORY_MAPPING.get((filename, page_index), "Uncategorized")
     
     @staticmethod
     def extract_year_from_filename(filename: str) -> str:
@@ -66,15 +86,16 @@ class CountryYearExtractor:
                         documents[j].metadata["country"] = country_before
                         page_year = documents[j].metadata["year"]
                         page_num = documents[j].metadata["page"]
-                        header = f"Country: {country_before}\nYear: {page_year}\nPage: {page_num}\n\n"
+                        page_category = documents[j].metadata.get("category", "Uncategorized")
+                        header = f"Country: {country_before}\nYear: {page_year}\nPage: {page_num}\nCategory: {page_category}\n\n"
                         old_text = documents[j].page_content
                         body = old_text.split("\n\n", 1)[-1] if "\n\n" in old_text else old_text
                         new_full_text = header + body
                         documents[j].page_content = new_full_text
                         filename = documents[j].metadata["source"]
-                        safe_name = re.sub(r"[^\w\-_.]", "_", f"{country_before}_{page_year}_page{page_num}.txt")
+                        safe_name = re.sub(r"[^\w\-_.]", "_", f"{page_category}_{country_before}_{page_year}_page{page_num}.txt")
                         out_path = os.path.join(Configuration.OUTPUT_PATH, safe_name)
-                        old_safe_name = re.sub(r"[^\w\-_.]", "_", f"{old_country}_{page_year}_page{page_num}.txt")
+                        old_safe_name = re.sub(r"[^\w\-_.]", "_", f"{page_category}_{old_country}_{page_year}_page{page_num}.txt")
                         old_out_path = os.path.join(Configuration.OUTPUT_PATH, old_safe_name)
                         if old_safe_name != safe_name and os.path.exists(old_out_path):
                             os.remove(old_out_path)
