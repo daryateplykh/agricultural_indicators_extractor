@@ -5,6 +5,8 @@ load_dotenv()
 
 class Configuration:
     API_KEY = os.getenv("API_KEY")
+    TOGETHER_API_KEY = os.getenv("TOGETHER_API_KEY")
+    
     CHROMA_PATH = "chroma"
     DATA_PATH = "data"
     OUTPUT_PATH = "output_chunks"

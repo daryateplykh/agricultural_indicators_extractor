@@ -1,7 +1,12 @@
-This project is a RAG (Retrieval-Augmented Generation) pipeline designed to extract structured data from agricultural census reports in PDF format. It uses OCR to process scanned documents, a vector database to store text chunks, and a large language model to answer questions based on the extracted information.
+# agricultural-indicators-extractor
+This repository accompanies the paper *"A longitudinal database of agricultural indicators from 1930 to 1960"*.
+
+## Abstract
+Agricultural indicators are important for understanding long-term changes in farming systems. However, historical data, such as agricultural reports, are typically contained in non-machine-readable documents and are unavailable in a structured format, which makes their analysis difficult. Here, we present a new dataset covering 130 countries and 275 harmonized agricultural indicators from 1930 to 1960. Our dataset includes 12,090 unique country–year observations and includes key indicators of farm structure and agricultural intensity, such as farm population, number and area of holdings, and crop area and production (e.g., rye and millet). We created the dataset using a large language model (LLM), which we used to extract structured data from archived FAO World Census of Agriculture (WCA) reports. We validated the LLM-based pipeline a manual validation, where the LLM pipeline achieves an accuracy of 80.3\%. We further compared our LLM pipeline against external databases, which are less comprehensive and are often derived from secondary sources rather than the raw country reports. Our dataset fills important gaps in existing historical data, as many values were previously missing or unstructured. Overall, the result represents a new resource for agricultural monitoring, enabling more comprehensive comparisons across countries and supporting policy development in the context of environmental change and long-term sustainable development planning.
 
 ## Project Structure
 
+```
 Rag_Pipline_Thesis_Teplykh/
 ├── chroma/                  # ChromaDB vector store
 ├── config.py                # Configuration file (paths, countries, years)
@@ -18,65 +23,73 @@ Rag_Pipline_Thesis_Teplykh/
     ├── data_processing/       # Scripts for PDF processing and text extraction
     ├── rag_core/              # Core RAG components (ChromaDB, querying)
     └── utils/                 # Utility functions
+```
 
 
+## Installation
+### Prerequisites
 
-## Setup and Installation
-1.  Create and activate a Python virtual environment:
-    python -m venv env
-    On Windows: .\env\Scripts\activate
-     On macOS/Linux:source env/bin/activate
+Before running this project, make sure you have the following:
 
-2.  Install the required dependencies:
-    
-    
+- **Python 3.8+** (for running the RAG pipeline to extract agricultural indicators)
+- **[Mistral AI](https://mistral.ai/) API key** (for OCR processing of scanned PDF documents)
+- **[Together AI](https://www.together.ai/) API key** (for LLM access during question answering)
+- **[Hugging Face](https://huggingface.co/) account** (for embedding model access during similarity search)
 
-## Configuration
-1.  Create a `.env` file in the root directory of the project. This file will store your API key for the Mistral API.
+### Setup instructions
+#### Python environment
+Install the required Python packages:
 
-2. Add your API key to the `.env` file:
-    API_KEY="your_mistral_api_key_here"
-    ** for tests you can use my key: API_KEY=Y1zsb7LjEcxjKmzaqcEIxEtjN2C4jOOU 
-    
+```bash
+pip3 install -r requirements.txt
+``` 
 
+### Download the dataset
+
+To reproduce the results, download the required data from FAO Statistics Division as follows:
+
+1. Download the required data archive from [FAO Statistics Division]( https://www.fao.org/statistics/resources/3/en?indexCatalogue=search-index-statistics&wordsMode=AllWords&fallbacklang=en&tags=299a3613-92eb-4458-92a5-40ad0ff55bff&searchQuery=*%3a*&tabInx=0).
+
+2. Place the contents into the `data/` folder located in the root directory of the repository.
 
 ## Usage
-1. Processing PDFs
+
+This repository consists of three main components:
+
+1. **PDF processing and OCR** using Mistral AI or PaddleOCR (Python)
+2. **Agricultural indicators-extractor** using retrieval-augmented generation (RAG) (Python)
+3. **Data validation and accuracy assessment** of extracted agricultural indicators (Python)
+
+### 1. Processing PDFs
 
 To process the PDF files located in the `data/` directory and extract text into `output_chunks/`, you can use either Mistral or PaddleOCR.
 
-*   Using Mistral OCR: python -m scripts.main_start_mistral
+**Using Mistral OCR:**
+```bash
+python -m scripts.main_start_mistral
+```
+This script will process the PDFs, extract text using Mistral's OCR, and store the results in a ChromaDB vector store.
 
-    This script will process the PDFs, extract text using Mistral's OCR, and store the results in a ChromaDB vector store.
+**Using PaddleOCR:**
+```bash
+python -m scripts.main_start_paddle
+```
+This script performs the same function but uses PaddleOCR for text extraction.
 
-*   Using PaddleOCR: python -m scripts.main_start_paddle
-    
-    This script performs the same function but uses PaddleOCR for text extraction.
-
-2. Querying the Data
+### 2. Extract agricultural indicators
 
 After processing the PDFs, you can ask questions about the data using the RAG pipeline.
 
-*   **Single Query:**
-    You can query the RAG pipeline directly from the command line:
-    python -m src.rag_core.rag_answer "Your question here"
+**Single Query:**
+You can query the RAG pipeline directly from the command line:
+```bash
+python -m src.rag_core.rag_answer "Your question here"
+```
 
-    For example:
-    python -m src.rag_core.rag_answer "What was the total area of farms in Cyprus in 1950?"
+The answer will be printed to the console, and a `output.csv` file will be created if a table is found in the response.
 
-    The answer will be printed to the console, and a `output.csv` file will be created if a table is found in the response.
-
-*   **Batch Queries:**
-    To run multiple queries from a file, you can use the `batch_rag_runner.py` script. The queries are defined in `scripts/queries.yaml`.
-    python -m scripts.batch_rag_runner
-
-## Testing
-
-This project includes a test suite to validate the RAG model's accuracy on a predefined set of questions. `scripts/run_tests.py`.
-
-I use this suite only to compare Paddle and Mistral. The main code to validate the results will be created later.
-
-Additionally. Comparing OCR Performance
-
-To compare the performance of Mistral and PaddleOCR, you can run the `performance_comparator.py` script: python -m scripts.performance_comparator
-This will generate a `performance_comparison_report.txt` file in the `output_chunks/` directory.
+**Batch Queries:**
+To run multiple queries from a file, you can use the `batch_rag_runner.py` script. The queries are defined in `scripts/queries.yaml`.
+```bash
+python -m scripts.batch_rag_runner
+```

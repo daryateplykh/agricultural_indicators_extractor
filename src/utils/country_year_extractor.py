@@ -5,18 +5,40 @@ from config import Configuration
 from langchain_core.documents import Document
 
 MANUAL_COUNTRY_MAPPING = {
-    ("1960_3.1UntilLebanon.pdf", 7): "Ceylon",
-    ("1960_3.1UntilLebanon.pdf", 8): "Ceylon",
-    ("1960_3.1UntilLebanon.pdf", 9): "Ceylon",
-    ("1960_3.1UntilLebanon.pdf", 10): "Ceylon",
-    ("1960_3.1UntilLebanon.pdf", 39): "Indinesia, Farm households",
-    ("1960_3.1UntilLebanon.pdf", 40): "Indinesia, Farm households",
-
-    ("1960_3.1UntilLebanon.pdf", 41): "Indinesia, Estates",
-    ("1960_3.1UntilLebanon.pdf", 42): "Indinesia, Estates",
-
-    ("1960_3.1UntilLebanon.pdf", 56): "Kenya, African holdings",
-    
+    ("1960_10pages.pdf", 0): "Peru",
+    ("1960_10pages.pdf", 1): "Peru",
+    ("1960_10pages.pdf", 2): "Peru",
+    ("1960_10pages.pdf", 3): "Peru",
+    ("1960_10pages.pdf", 4): "Philippines",
+    ("1960_10pages.pdf", 5): "Philippines",
+    ("1960_10pages.pdf", 6): "Philippines",
+    ("1960_10pages.pdf", 7): "Philippines",
+    ("1960_10pages.pdf", 8): "Philippines",
+    ("1950_10pages.pdf", 0): "American Samoa",
+    ("1950_10pages.pdf", 1): "American Samoa",
+    ("1950_10pages.pdf", 2): "Australia",
+    ("1950_10pages.pdf", 3): "Australia",
+    ("1950_10pages.pdf", 4): "Australia",
+    ("1950_10pages.pdf", 5): "Australia",
+    ("1950_10pages.pdf", 6): "Australia",
+    ("1950_10pages.pdf", 7): "Australia",
+    ("1950_10pages.pdf", 8): "Austria",
+    ("1950_10pages.pdf", 9): "Austria",
+    ("1950_10pages.pdf", 10): "Austria",
+    ("1950_10pages.pdf", 11): "Austria",
+    ("1930_10pages.pdf", 0): "Canada",
+    ("1930_10pages.pdf", 1): "Canada",
+    ("1930_10pages.pdf", 2): "Canada",
+    ("1930_10pages.pdf", 3): "Canada",
+    ("1930_10pages.pdf", 4): "Canada",
+    ("1930_10pages.pdf", 5): "Canada",
+    ("1930_10pages.pdf", 6): "Canada",
+    ("1930_10pages.pdf", 7): "Canada",
+    ("1930_10pages.pdf", 8): "Canada",
+    ("1930_10pages.pdf", 9): "Canada",
+    ("1930_10pages.pdf", 10): "Canada",
+    ("1930_10pages.pdf", 11): "Canada",
+    ("1930_10pages.pdf", 12): "Canada",
 
 }
 

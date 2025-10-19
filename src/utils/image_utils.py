@@ -5,22 +5,10 @@ from typing import Tuple
 
 def preprocess_image(image: Image.Image, year: str = None) -> Image.Image:
     if str(year) == '1930':
-        image = image.convert('L')
-        
-        enhancer = ImageEnhance.Contrast(image)
-        image = enhancer.enhance(2.0)
-        
-        open_cv_image = np.array(image)
-        
-        denoised_image = cv2.medianBlur(open_cv_image, 3)
-        
-        binary_image = cv2.adaptiveThreshold(denoised_image, 255, cv2.ADAPTIVE_THRESH_GAUSSIAN_C, 
-                                             cv2.THRESH_BINARY, 11, 4)
-
-        kernel = np.ones((1, 1), np.uint8)
-        opening = cv2.morphologyEx(binary_image, cv2.MORPH_OPEN, kernel, iterations=1)
-        
-        processed_image = Image.fromarray(opening)
+        open_cv_image = cv2.cvtColor(np.array(image), cv2.COLOR_RGB2BGR)
+        gray = cv2.cvtColor(open_cv_image, cv2.COLOR_BGR2GRAY)
+        enhanced = cv2.convertScaleAbs(gray, alpha=1, beta=5)
+        processed_image = Image.fromarray(enhanced)
 
     else:
         image = image.convert('L')
