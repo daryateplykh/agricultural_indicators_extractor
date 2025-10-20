@@ -1,6 +1,6 @@
 import pandas as pd
 
-def analyze_results():
+def benchmarking_validation():
     try:
         results_df = pd.read_csv("data_comparison_duplicate_handling.csv")
     except FileNotFoundError:
@@ -24,4 +24,4 @@ def analyze_results():
     
 
 if __name__ == "__main__":
-    analyze_results()
+    benchmarking_validation()

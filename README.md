@@ -1,4 +1,4 @@
-# agricultural-indicators-extractor
+# agricultural_indicators_extractor
 This repository accompanies the paper *"A longitudinal database of agricultural indicators from 1930 to 1960"*.
 
 ## Abstract
@@ -20,6 +20,7 @@ Rag_Pipline_Thesis_Teplykh/
 │   ├── main_start_paddle.py   # Main script to process PDFs with PaddleOCR
 │   ├── batch_rag_runner.py    # Script to run batch queries
 │   └── performance_comparator.py # Script to compare OCR performance
+├── test/                    # Scripts for testing and validating the extraction pipeline
 └── src/                     # Source code
     ├── data_processing/       # Scripts for PDF processing and text extraction
     ├── rag_core/              # Core RAG components (ChromaDB, querying)
@@ -96,4 +97,28 @@ The answer will be printed to the console, and a `output.csv` file will be creat
 To run multiple queries from a file, you can use the `batch_rag_runner.py` script. The queries are defined in `scripts/queries.yaml`.
 ```bash
 python -m scripts.batch_rag_runner
+```
+
+### 3. Data validation and accuracy assessment
+
+The project includes two comprehensive validation systems to assess the accuracy of the LLM-based data extraction pipeline:
+
+#### 3.1 Manual validation
+
+This test compares extracted data with the human-annotated dataset.
+
+**Manual validation:**
+```bash
+cd test
+python manual_validation.py
+```
+
+#### 3.2 Benchmarking against existing databases
+
+The extracted dataset was also compared against independent agricultural databases.
+
+**Benchmarking against Existing Databases:**
+```bash
+cd test
+python benchmarking_validation.py
 ```
