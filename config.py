@@ -6,7 +6,9 @@ load_dotenv()
 class Configuration:
     API_KEY = os.getenv("API_KEY")
     TOGETHER_API_KEY = os.getenv("TOGETHER_API_KEY")
-    
+    EMBEDDING_MODEL = "sentence-transformers/all-MiniLM-L6-v2"
+    LLM_MODEL = "deepseek-ai/DeepSeek-R1-Distill-Llama-70B"
+    OCR_MODEL = "mistral-ocr-latest"
     CHROMA_PATH = "chroma"
     DATA_PATH = "data"
     OUTPUT_PATH = "output_chunks"

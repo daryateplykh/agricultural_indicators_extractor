@@ -13,6 +13,7 @@ Rag_Pipline_Thesis_Teplykh/
 ├── data/                    # Input PDF files
 ├── env/                     # Python virtual environment
 ├── output_chunks/           # Processed text chunks from PDFs
+├── rag_outputs/             # RAG query results and CSV outputs
 ├── requirements.txt         # Python dependencies
 ├── scripts/                 # Main scripts to run the pipeline
 │   ├── main_start_mistral.py  # Main script to process PDFs with Mistral
@@ -36,7 +37,16 @@ Before running this project, make sure you have the following:
 - **[Together AI](https://www.together.ai/) API key** (for LLM access during question answering)
 - **[Hugging Face](https://huggingface.co/) account** (for embedding model access during similarity search)
 
+
 ### Setup instructions
+#### System Dependencies
+
+This project requires **Poppler** for PDF processing. 
+
+```bash
+conda install -c conda-forge poppler
+``` 
+
 #### Python environment
 Install the required Python packages:
 
@@ -56,7 +66,7 @@ To reproduce the results, download the required data from FAO Statistics Divisio
 
 This repository consists of three main components:
 
-1. **PDF processing and OCR** using Mistral AI or PaddleOCR (Python)
+1. **PDF processing and OCR** using Mistral AI (Python)
 2. **Agricultural indicators-extractor** using retrieval-augmented generation (RAG) (Python)
 3. **Data validation and accuracy assessment** of extracted agricultural indicators (Python)
 
@@ -69,12 +79,6 @@ To process the PDF files located in the `data/` directory and extract text into 
 python -m scripts.main_start_mistral
 ```
 This script will process the PDFs, extract text using Mistral's OCR, and store the results in a ChromaDB vector store.
-
-**Using PaddleOCR:**
-```bash
-python -m scripts.main_start_paddle
-```
-This script performs the same function but uses PaddleOCR for text extraction.
 
 ### 2. Extract agricultural indicators
 

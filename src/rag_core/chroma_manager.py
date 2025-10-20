@@ -9,7 +9,7 @@ class ChromaManager:
     def __init__(self):
         self.db = Chroma(
             persist_directory=Configuration.CHROMA_PATH,
-            embedding_function=HuggingFaceEmbeddings(model_name="sentence-transformers/all-MiniLM-L6-v2")
+            embedding_function=HuggingFaceEmbeddings(model_name=Configuration.EMBEDDING_MODEL)
         )
 
     def add_documents(self, documents: list[Document]):

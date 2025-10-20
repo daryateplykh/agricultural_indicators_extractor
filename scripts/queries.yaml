@@ -11,7 +11,7 @@ queries:
 indicator_groups:
   - category: 0
     indicators:
-     # - Area of agricultural and forest holdings       
+      - Area of agricultural and forest holdings       
       - Number and area of farms and their distribution according to size     
       - Number of agricultual holdings and their distribution according to nature of occupancy tenure - Holdings farmed occupied entirely by owners, Holdings farmed occupied mainly by owners, Holdings farmed occupied entirely by lessees or tenants, Holdings farmed occupied mainly by lessees or tenants, Holdings farmed occupied entirely in other way, Holdings farmed occupied mainly in other ways 
       - Number and area of holdings - Number, Area
@@ -21,21 +21,51 @@ indicator_groups:
       - Land Utilization -Cropland, Arable land, Land under permanent crops, Permanent meadows and pastures, Cultivated Pasture, Number of holdings reporting, Wood or forest land,  All other land Number of holdings reporting, Area (total),Land for Growing trees and shrubs, total agricultural land, productive marshlands, heath lands and other productive but uncultivated lands, Unproductive lands
   - category: 2
     indicators:
-      - Barley - Number of holdings reporting, Area (total), Production
-      - Beans - Number of holdings reporting, Area (total), Production
-      - Colza - Number of holdings reporting, Area (total), Production
-      - Edible Dry Beans - Number of holdings reporting, Area (total), Production
-      - Edible Dry Peas - Number of holdings reporting, Area (total), Production
-      - Flax - Number of holdings reporting, Area (total), Production
-      - Maize - Number of holdings reporting, Area (total), Production
-      - Oats - Number of holdings reporting, Area (total), Production
-      - Potatoes - Number of holdings reporting, Area (total), Production
-      - Rapeseed - Number of holdings reporting, Area (total), Production
-      - Rye - Number of holdings reporting, Area (total), Production
-      - Spring Wheat - Number of holdings reporting, Area (total), Production
-      - Winter Wheat - Number of holdings reporting, Area (total), Production
-      - Sugar Beets - Number of holdings reporting, Area (total), Production
       - Wheat - Number of holdings reporting, Area (total), Production
+      - Sweet potatoes - Number of holdings reporting, Area (total), Production
+      - Winter Wheat - Number of holdings reporting, Area (total), Production
+      - Yams - Number of holdings reporting, Area (total), Production
+      - Spring Wheat - Number of holdings reporting, Area (total), Production
+      - Sugar Cane - Number of holdings reporting, Area (total), Production
+      - Rye - Number of holdings reporting, Area (total), Production
+      - Sugar Beets - Number of holdings reporting, Area (total), Production
+      - Rice - Number of holdings reporting, Area (total), Production
+      - Cotton - Number of holdings reporting, Area (total), Production
+      - Millet and Sorghum - Number of holdings reporting, Area (total), Production
+      - Flax - Number of holdings reporting, Area (total), Production
+      - Millet - Number of holdings reporting, Area (total), Production
+      - Hemp - Number of holdings reporting, Area (total), Production
+      - Sorghum - Number of holdings reporting, Area (total), Production
+      - Groundnuts - Number of holdings reporting, Area (total), Production
+      - Maize - Number of holdings reporting, Area (total), Production
+      - Linseed - Number of holdings reporting, Area (total), Production
+      - Barley - Number of holdings reporting, Area (total), Production
+      - Hempseed - Number of holdings reporting, Area (total), Production
+      - Oats - Number of holdings reporting, Area (total), Production
+      - Castor beans - Number of holdings reporting, Area (total), Production
+      - Spelt - Number of holdings reporting, Area (total), Production
+      - Rapeseed - Number of holdings reporting, Area (total), Production
+      - Maslin - Number of holdings reporting, Area (total), Production
+      - Colza - Number of holdings reporting, Area (total), Production
+      - Other mixed grains - Number of holdings reporting, Area (total), Production
+      - Sesame - Number of holdings reporting, Area (total), Production
+      - Soybean - Number of holdings reporting, Area (total), Production
+      - Sunflower - Number of holdings reporting, Area (total), Production
+      - All dry beans and peas - Number of holdings reporting, Area (total), Production
+      - Tobacco - Number of holdings reporting, Area (total), Production
+      - Edible dry beans - Number of holdings reporting, Area (total), Production
+      - Coffee - Number of holdings reporting, Area (total), Production
+      - Lentils - Number of holdings reporting, Area (total), Production
+      - Tea - Number of holdings reporting, Area (total), Production
+      - Chickpeas - Number of holdings reporting, Area (total), Production
+      - Cacao - Number of holdings reporting, Area (total), Production
+      - Edible dry peas - Number of holdings reporting, Area (total), Production
+      - Coconut - Number of holdings reporting, Area (total), Production
+      - Potatoes - Number of holdings reporting, Area (total), Production
+      - Oil Palms - Number of holdings reporting, Area (total), Production
+      - Manioc - Number of holdings reporting, Area (total), Production
+      - Rubber - Number of holdings reporting, Area (total), Production
+      - Arrowroot - Number of holdings reporting, Area (total), Production
   - category: 3
     indicators:
       - Horses - Number of horses, Number of holdings reporting
@@ -55,17 +85,53 @@ indicator_groups:
       - Farm Population - All persons (Male, Female), Holders and members of their households(Male, Female), Other persons living on the holding(Male, Female), Farm population by main occupation(Male, Female)
   - category: 6
     indicators:
-      - Binders
-      - Threshers
-      - Mowers
-      - Rakes
-      - Reapers
-      - Threshers
       - Tractors
+      - Mowers
+      - Plows
+      - Rakes
+      - Iron plows
+      - Reapers
+      - Disk plows
+      - Binders
+      - Wood plows
+      - Combines (harvest-threshers)
+      - Ridging plows
+      - Corn pickers
+      - Tine harrows
+      - Potato-harvesting machinery
+      - Rotary tillers
+      - Sugar-beet harvesting machinery
+      - Disk harrows
+      - Threshers
+      - Cultivators
+      - Hay balers
+      - Hoes
+      - Sugarcane crushers
+      - Seed drills
+      - Carts
+      - Sprayers
+      - Jeeps
+      - Dusters
+      - Station wagons
+      - Rollers
+      - Trucks
+      - Fertilizer distributors
+      - Automobiles
+      - Grain harvesters
+      - Ploughs
+      - Tedders
+      - Maize shredders
+      - Hay and forage presses
+      - Chaffcutters
+      - Rootcutters
+      - Grinders
+      - Shedders
+      - Potato lifters
+      - Cleaners and sorters
   - category: 7
     indicators:
       - Land irrigated (Area , Number of holdings reporting)
       - Area of land drained (Area , Number of holdings reporting)
   - category: 8
     indicators:
-      - Organic fertilizers (Number of holdings reporting, Area), Inorganic fertilizers (Number of holdings reporting, Area),Mixed fertilizers (Number of holdings reporting, Area), Nitrogenous fertilizers, Phosphate fertilizers, Potash Fertilizers, Natural Fertilizers, Other fertilizers nad fertilizer compounds, Improvements 
+      - Organic fertilizers (Number of holdings reporting, Area), Inorganic fertilizers (Number of holdings reporting, Area),Mixed fertilizers (Number of holdings reporting, Area), Nitrogenous fertilizers, Phosphate fertilizers, Potash Fertilizers, Natural Fertilizers, Other fertilizers and fertilizer compounds, Improvements 

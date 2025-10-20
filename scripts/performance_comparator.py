@@ -1,6 +1,6 @@
 import time
 import os
-from typing import Dict, List, Tuple
+from typing import Dict, List
 from dataclasses import dataclass
 from pdf2image import convert_from_path
 from PIL import Image

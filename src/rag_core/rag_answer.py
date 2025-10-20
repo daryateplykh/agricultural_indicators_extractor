@@ -6,12 +6,11 @@ from dotenv import load_dotenv
 from langchain.prompts import ChatPromptTemplate
 from langchain_chroma import Chroma
 from langchain_huggingface import HuggingFaceEmbeddings
-from langchain_community.embeddings import FastEmbedEmbeddings
 from together import Together
+from config import Configuration
 
 
 load_dotenv()
-CHROMA_PATH = "chroma"
 
 PROMPT_TEMPLATE = """
 You are a data assistant for agricultural census reports.
@@ -36,15 +35,12 @@ Answer the question based on the above context: {question}
 """
 
 def get_embedding_function():
-    return HuggingFaceEmbeddings(model_name="sentence-transformers/all-MiniLM-L6-v2") 
-     #return FastEmbedEmbeddings(model_name="BAAI/bge-small-en-v1.5")  #  PADDLE
-  
-    
+    return HuggingFaceEmbeddings(model_name=Configuration.EMBEDDING_MODEL)
 
 def query_rag(query_text: str, country: str, year: int, save_csv: bool = True) -> str:
     embedding_function = get_embedding_function()
     db = Chroma(
-        persist_directory=CHROMA_PATH,
+        persist_directory=Configuration.CHROMA_PATH,
         embedding_function=embedding_function
     )
 
@@ -68,7 +64,7 @@ def query_rag(query_text: str, country: str, year: int, save_csv: bool = True) -
     client = Together()  
     try:
         response = client.chat.completions.create(
-            model="deepseek-ai/DeepSeek-R1-Distill-Llama-70B",
+            model=Configuration.LLM_MODEL,
             messages=[
                 {"role": "user", "content": prompt}
             ],

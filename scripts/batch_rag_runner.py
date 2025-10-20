@@ -3,9 +3,6 @@ import re
 import os
 from datetime import datetime
 from src.rag_core.rag_answer import query_rag
-from src.data_processing.scan_extractor_mistral import process_all_pdfs
-from src.utils.chunk_manager import aggregate_country_chunks
-from src.rag_core.chroma_manager import ChromaManager
 import pandas as pd
 import logging
 
@@ -34,7 +31,7 @@ class BatchRAGRunner:
         self.indicator_groups = self.config["indicator_groups"]
         
         timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-        self.output_dir = f"rag_output_{timestamp}"
+        self.output_dir = f"rag_outputs/rag_output_{timestamp}"
         os.makedirs(self.output_dir, exist_ok=True)
 
     def run(self):

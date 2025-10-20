@@ -6,11 +6,11 @@ from langchain_core.documents import Document
 from config import Configuration
 from src.utils.country_year_extractor import CountryYearExtractor
 from mistralai import Mistral
-from PIL import Image as PILImage, ImageEnhance
+from PIL import Image as PILImage
 from io import BytesIO
 import base64
 import pdfplumber
-from src.utils.image_utils import preprocess_image, split_image_in_half, smart_split_page, split_image_horizontally, is_image_blank
+from src.utils.image_utils import preprocess_image, split_image_in_half, smart_split_page, is_image_blank
 from src.utils.text_utils import clean_ocr_text, stitch_numbers
 
 class ScannedExtractorMistral:
@@ -35,7 +35,7 @@ class ScannedExtractorMistral:
         base64_image = base64.b64encode(buffer.getvalue()).decode("utf-8")
         
         ocr_response = self.mistral_client.ocr.process(
-            model="mistral-ocr-latest",
+            model=Configuration.OCR_MODEL,
             document={"type": "image_url", "image_url": f"data:image/jpeg;base64,{base64_image}"}
         )
         

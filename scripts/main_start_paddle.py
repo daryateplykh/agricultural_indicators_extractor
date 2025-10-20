@@ -2,7 +2,6 @@ import argparse
 import os
 import re
 import shutil
-import sys
 
 from config import Configuration
 from src.data_processing.scan_extractor_paddle import process_pdf_paddle
