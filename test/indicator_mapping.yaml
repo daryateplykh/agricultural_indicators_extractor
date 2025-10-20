@@ -1,0 +1,182 @@
+"Number of holdings":
+  - "Total number of holdings"
+  - "Number of holdings reporting"
+  - "Number of farms"
+
+"Area of holdings (total)":
+  - "Total Area in Holdings"
+  - "Total area of holdings"
+  - "Area (total)"
+
+"Tractors - Number of tractors":
+  - "Tractors on farm"
+  - "Number of tractors"
+  - "Tractors"
+
+"Automobiles - Number of holdings reporting":
+  - "Automobiles"
+
+"Horses":
+  - "Horses and Mules"
+
+"United States":
+  - "United States of America"
+
+"Barley - Area":
+  - "Barley - Hectares"
+  - "Barley - area"
+  - "Barley - Area (total)"
+"Barley - Production":
+  - "Barley - Metric tons"
+  - "Barley - production"
+
+"Wheat - Area":
+  - "Wheat - Hectares"
+  - "Wheat - area"
+  - "Wheat - Area (total)"
+"Wheat - Production":
+  - "Wheat - Metric tons"
+  - "Wheat - production"
+
+"Cotton - Area":
+  - "Cotton - Hectares"
+  - "Cotton - area"
+  - "Cotton - Area (total)"
+"Cotton - Production":
+  - "Cotton - Metric tons"
+  - "Cotton - production"
+
+"Millet - Area":
+  - "Millet - Area (total)"
+"Millet - Production":
+  - "Millet - Production"
+
+"Oats - Area":
+  - "Oats - Area (total)"
+"Potatoes - Area":
+  - "Potatoes - Area (total)"
+"Potatoes - Production":
+  - "Potatoes - Production"
+"Rice - Area":
+  - "Rice - Area (total)"
+"Rye - Area":
+  - "Rye - Area (total)"
+"Soybeans - Area":
+  - "Soybeans - Area (total)"
+"Sweet Potatoes - Area":
+  - "Sweet Potatoes - Area (total)"
+"Tea - Area":
+  - "Tea - Area (total)"
+
+"Drybeans - Area":
+  - "Drybeans - area"
+  - "Edible Dry Peas - Area"
+  - "Edible Dry Peas - Area (total)"
+  - "Beans - area"
+
+"Lentils - Area":
+  - "Lentils - area"
+  - "Lentils - Area (total)"
+
+"Millet and Sorghum - Area":
+  - "Millet and sorghum - Hectares"
+  - "Millet and Sorghum - area"
+"Millet and Sorghum - Production":
+  - "Millet and sorghum - Metric tons"
+  - "Millet and Sorghum - production"
+
+"Sorghum - Area":
+  - "Sorghum - area"
+  - "Sorghum - Area (total)"
+"Sorghum - Production":
+  - "Sorghum - production"
+
+"Tobacco - Area":
+  - "Tobacco - area"
+  - "Tobacco - Area (total)"
+
+"Sesame - Area":
+  - "Sesame - Hectares"
+  - "Sesame - area"
+"Sesame - Production":
+  - "Sesame - Metric tons"
+  - "Sesame - production"
+
+"Camels":
+  - "Camels - Number"
+"Cattle":
+  - "Cattle - Number"
+  - "Cattle - Number of cattle"
+"Goats":
+  - "Goats - Number"
+  - "Goats - Number of goats"
+"Sheep":
+  - "Sheep - Number"
+  - "Sheep - Number of sheep"
+"Horses":
+  - "Horses and Mules"
+  - "Horses - Number of horses"
+"Pigs":
+  - "Pigs - Number of pigs"
+"Poultry":
+  - "Poultry - Number of poultry"
+
+unit_mappings:
+  hectares: hectares
+  ha: hectares
+  "ha (thousands)": hectares_thousands
+  "ha (millions)": hectares_millions
+  "metric tons": metric_tons
+  tons: metric_tons
+  tonnes: metric_tons
+  "tonnes (thousands)": metric_tons_thousands
+  "tonnes (millions)": metric_tons_millions
+  quintals: quintals
+  "quintals (thousands)": quintals_thousands
+  "quintals/ha": quintals_per_hectare
+  "tonnes/ha": metric_tons_per_hectare
+  "acre (thousands)": acres_thousands
+  acres: acres
+  number: number
+
+unit_conversions:
+  hectares_to_acres: 2.47105
+  acres_to_hectares: 0.404686
+  hectares_thousands_to_hectares: 1000
+  hectares_millions_to_hectares: 1000000
+  acres_thousands_to_hectares: 404.686
+  
+  quintals_to_metric_tons: 0.1
+  metric_tons_to_quintals: 10
+  quintals_thousands_to_metric_tons: 100
+  metric_tons_thousands_to_metric_tons: 1000
+  metric_tons_millions_to_metric_tons: 1000000
+  
+  quintals_per_hectare_to_metric_tons_per_hectare: 0.1
+  metric_tons_per_hectare_to_quintals_per_hectare: 10
+
+
+crop_mappings:
+  maize: Maize
+  wheat: Wheat
+  barley: Barley
+  potatoes: Potatoes
+  rice: Rice
+  oats: Oats
+  sorghum: Sorghum
+  millet: Millet
+  beans: Beans
+  groundnuts: Groundnuts
+  "sugar cane": "Sugar cane"
+  cotton: Cotton
+  tobacco: Tobacco
+  coffee: Coffee
+  cacao: Cacao
+  cocoa: Cacao
+  alfalfa: Alfalfa
+  apples: Apples
+  bananas: Bananas
+  cassava: Cassava
+  "dry beans": Drybeans
+  lentils: Lentils
+  "millet and sorghum": "Millet and Sorghum"
