@@ -103,21 +103,15 @@ python -m scripts.batch_rag_runner
 
 The project includes two comprehensive validation systems to assess the accuracy of the LLM-based data extraction pipeline:
 
-#### 3.1 Manual validation
-
-This test compares extracted data with the human-annotated dataset.
-
 **Manual validation:**
+This test compares extracted data with the human-annotated dataset.
 ```bash
 cd test
 python manual_validation.py
 ```
 
-#### 3.2 Benchmarking against existing databases
-
-The extracted dataset was also compared against independent agricultural databases.
-
 **Benchmarking against Existing Databases:**
+The extracted dataset was also compared against independent agricultural databases.
 ```bash
 cd test
 python benchmarking_validation.py
