@@ -16,7 +16,6 @@ from src.utils.text_utils import clean_ocr_text, stitch_numbers
 class ScannedExtractorMistral:
     def __init__(self):
         self.mistral_client = Mistral(api_key=Configuration.API_KEY)
-        os.makedirs(Configuration.IMAGE_CHUNKS_PATH, exist_ok=True)
 
     def extract_text_mistral(self, image: PILImage.Image, year: str, page_num: int = 0, filename: str = "") -> str:
         header_text = pytesseract.image_to_string(
@@ -75,11 +74,6 @@ class ScannedExtractorMistral:
         for i, image in enumerate(images):
             preprocessed = preprocess_image(image, current_year)
             
-
-            base_filename = os.path.splitext(filename)[0]
-            full_page_save_path = os.path.join(Configuration.IMAGE_CHUNKS_PATH, f"{base_filename}_page{i}_full.jpg")
-            preprocessed.save(full_page_save_path)
-            
             mistral_text = self.extract_text_mistral(preprocessed, current_year, i, filename)
             current_country = CountryYearExtractor.extract_country(filename, i, mistral_text)
             page_year = current_year
@@ -88,7 +82,6 @@ class ScannedExtractorMistral:
             header = f"Country: {current_country}\nYear: {page_year}\nPage: {i}\n\n"
             full_text = header + mistral_text
             
-
             safe_name = re.sub(r"[^\w\-_.]", "_", f"{current_country}_{page_year}_page{i}.txt")
             out_path = os.path.join(Configuration.OUTPUT_PATH, safe_name)
             with open(out_path, "w", encoding="utf-8") as f:

@@ -61,7 +61,7 @@ def query_rag(query_text: str, country: str, year: int, save_csv: bool = True) -
     prompt = prompt_template.format(context=context_text, question=query_text)
 
     
-    client = Together()  
+    client = Together(api_key=Configuration.TOGETHER_API_KEY)  
     try:
         response = client.chat.completions.create(
             model=Configuration.LLM_MODEL,

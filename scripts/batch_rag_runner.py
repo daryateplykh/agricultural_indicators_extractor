@@ -1,7 +1,6 @@
 import yaml
 import re
 import os
-from datetime import datetime
 from src.rag_core.rag_answer import query_rag
 import pandas as pd
 import logging
@@ -29,15 +28,15 @@ class BatchRAGRunner:
             self.config = yaml.safe_load(f)
         self.queries = self.config["queries"]
         self.indicator_groups = self.config["indicator_groups"]
-        
-        timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-        self.output_dir = f"rag_outputs/rag_output_{timestamp}"
-        os.makedirs(self.output_dir, exist_ok=True)
 
     def run(self):
         for q in self.queries:
             country = q["country"]
             years_config = q["years"]
+            
+            safe_country = re.sub(r"[^\w\-]", "_", country)
+            self.output_dir = f"data/rag_outputs/{safe_country}"
+            os.makedirs(self.output_dir, exist_ok=True)
             
             years = [yc["year"] for yc in years_config]
             output_years_map = {yc["year"]: yc.get("output_year") for yc in years_config}
@@ -55,11 +54,9 @@ class BatchRAGRunner:
 
                     if len(years_for_filename) == 1:
                         question = f"What is the {indicator} in {country} in {years_for_filename[0]}?"
-                        filename_suffix = f"{years_for_filename[0]}"
                     else:
                         years_str = " and ".join(years_for_filename)
                         question = f"What are the {indicator} data for {country} across {years_str}? Please provide all available data for both years, including any differences in parameters between the years."
-                        filename_suffix = "_".join(years_for_filename)
                     
                     print(f"\n=== Question: {question}")
                     
@@ -68,12 +65,11 @@ class BatchRAGRunner:
                     answer = query_rag(question, country, first_year, save_csv=False)
                     print(f"RAG Answer for '{indicator}':\n{answer}")
                     
-                    safe_country = re.sub(r"[^\w\-]", "_", country)
                     safe_indicator = re.sub(r"[^\w\-]", "_", indicator)
 
                     safe_indicator = safe_indicator[:80]
-
-                    filename = os.path.join(self.output_dir, f"output_{category}_{safe_country}_{filename_suffix}_{safe_indicator}.csv")
+   
+                    filename = os.path.join(self.output_dir, f"output_{category}_{safe_indicator}.csv")
                     table_lines = [line for line in answer.splitlines() if "|" in line]
                     table_lines = [line for line in table_lines if not re.match(r"^\s*\|?\s*-+\s*\|", line)]
                     if len(table_lines) >= 2:

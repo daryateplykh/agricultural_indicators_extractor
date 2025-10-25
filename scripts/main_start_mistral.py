@@ -1,7 +1,11 @@
 import argparse
 import os
 import sys
+from dotenv import load_dotenv
+
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
+load_dotenv()
 
 from config import Configuration
 from src.rag_core.chroma_manager import ChromaManager

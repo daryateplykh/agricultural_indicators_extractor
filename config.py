@@ -1,7 +1,6 @@
 import os
 from dotenv import load_dotenv
 
-load_dotenv()
 
 class Configuration:
     API_KEY = os.getenv("API_KEY")
@@ -13,7 +12,6 @@ class Configuration:
     DATA_PATH = "data"
     OUTPUT_PATH = "output_chunks"
     IMAGE_CHUNKS_PATH = "image_chunks"
-    COUNTRY_CHUNKS_PATH = "country_chunks"
 
     KEYWORDS = ["not classified by size of holding", "Main Results"]
 
@@ -57,6 +55,4 @@ class Configuration:
 
     @classmethod
     def initialize(cls):
-        os.makedirs(cls.OUTPUT_PATH, exist_ok=True)
-        os.makedirs(cls.IMAGE_CHUNKS_PATH, exist_ok=True)
-        os.makedirs(cls.COUNTRY_CHUNKS_PATH, exist_ok=True) 
+        os.makedirs(cls.OUTPUT_PATH, exist_ok=True) 

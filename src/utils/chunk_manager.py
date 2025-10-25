@@ -45,9 +45,6 @@ class ChunkManager:
 
 def aggregate_country_chunks(documents: list[Document]) -> list[Document]:
 
-    country_dir = Configuration.COUNTRY_CHUNKS_PATH
-    os.makedirs(country_dir, exist_ok=True)
-
     country_docs = collections.defaultdict(list)
     for doc in documents:
         key = (
@@ -78,10 +75,5 @@ def aggregate_country_chunks(documents: list[Document]) -> list[Document]:
         }
         agg_doc = Document(page_content=full_content, metadata=metadata)
         aggregated_docs.append(agg_doc)
-
-
-        output_filename = os.path.join(country_dir, f"{country}_{year}.txt")
-        with open(output_filename, 'w', encoding='utf-8') as f:
-            f.write(full_content)
             
     return aggregated_docs
