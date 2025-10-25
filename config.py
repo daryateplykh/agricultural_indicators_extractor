@@ -3,7 +3,7 @@ from dotenv import load_dotenv
 
 
 class Configuration:
-    API_KEY = os.getenv("API_KEY")
+    MISTRAL_API_KEY = os.getenv("MISTRAL_API_KEY")
     TOGETHER_API_KEY = os.getenv("TOGETHER_API_KEY")
     EMBEDDING_MODEL = "sentence-transformers/all-MiniLM-L6-v2"
     LLM_MODEL = "deepseek-ai/DeepSeek-R1-Distill-Llama-70B"

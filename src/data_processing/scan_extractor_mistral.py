@@ -15,7 +15,7 @@ from src.utils.text_utils import clean_ocr_text, stitch_numbers
 
 class ScannedExtractorMistral:
     def __init__(self):
-        self.mistral_client = Mistral(api_key=Configuration.API_KEY)
+        self.mistral_client = Mistral(api_key=Configuration.MISTRAL_API_KEY)
 
     def extract_text_mistral(self, image: PILImage.Image, year: str, page_num: int = 0, filename: str = "") -> str:
         header_text = pytesseract.image_to_string(

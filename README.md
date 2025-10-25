@@ -11,15 +11,11 @@ Rag_Pipline_Thesis_Teplykh/
 ├── chroma/                  # ChromaDB vector store
 ├── config.py                # Configuration file (paths, countries, years)
 ├── data/                    # Input PDF files
-├── env/                     # Python virtual environment
-├── output_chunks/           # Processed text chunks from PDFs
-├── rag_outputs/             # RAG query results and CSV outputs
-├── requirements.txt         # Python dependencies
+│   └── rag_outputs/         # RAG query results and CSV outputs
 ├── scripts/                 # Main scripts to run the pipeline
 │   ├── main_start_mistral.py  # Main script to process PDFs with Mistral
 │   ├── main_start_paddle.py   # Main script to process PDFs with PaddleOCR
 │   ├── batch_rag_runner.py    # Script to run batch queries
-│   └── performance_comparator.py # Script to compare OCR performance
 ├── test/                    # Scripts for testing and validating the extraction pipeline
 └── src/                     # Source code
     ├── data_processing/       # Scripts for PDF processing and text extraction
@@ -34,8 +30,8 @@ Rag_Pipline_Thesis_Teplykh/
 Before running this project, make sure you have the following:
 
 - **Python 3.8+** (for running the RAG pipeline to extract agricultural indicators)
-- **[Mistral AI](https://mistral.ai/) API key** (for OCR processing of scanned PDF documents)
-- **[Together AI](https://www.together.ai/) API key** (for LLM access during question answering)
+- **[Mistral AI](https://mistral.ai/) API key** - set as `MISTRAL_API_KEY` in `.env` (for OCR processing of scanned PDF documents)
+- **[Together AI](https://www.together.ai/) API key** - set as `TOGETHER_API_KEY` in `.env` (for LLM access during question answering)
 - **[Hugging Face](https://huggingface.co/) account** (for embedding model access during similarity search)
 
 
@@ -53,7 +49,15 @@ Install the required Python packages:
 
 ```bash
 pip3 install -r requirements.txt
-``` 
+```
+
+#### Environment configuration
+Create a `.env` file in the project root directory with the following variables:
+
+```env
+MISTRAL_API_KEY=your_mistral_api_key_here
+TOGETHER_API_KEY=your_together_api_key_here
+```
 
 ### Download the dataset
 
@@ -62,6 +66,10 @@ To reproduce the results, download the required data from FAO Statistics Divisio
 1. Download the required data archive from [FAO Statistics Division]( https://www.fao.org/statistics/resources/3/en?indexCatalogue=search-index-statistics&wordsMode=AllWords&fallbacklang=en&tags=299a3613-92eb-4458-92a5-40ad0ff55bff&searchQuery=*%3a*&tabInx=0).
 
 2. Place the contents into the `data/` folder located in the root directory of the repository.
+
+## Data Description
+
+For detailed information about the structure and format of the extracted data, see [DATA_OUTPUTS_DESCRIPTION.md](DATA_OUTPUTS_DESCRIPTION.md).
 
 ## Usage
 
