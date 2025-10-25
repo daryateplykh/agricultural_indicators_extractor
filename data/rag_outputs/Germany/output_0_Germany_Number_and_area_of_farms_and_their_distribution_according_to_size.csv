@@ -1,0 +1,36 @@
+Country,Year,Indicator,Value,Unit
+Germany,1933,Number of holdings under 5 ha,757 412,
+Germany,1933,Forest land under 5 ha,2 450 206,ha
+Germany,1933,Number of holdings 5-20 ha,145 800,
+Germany,1933,Forest land 5-20 ha,3 184 264,ha
+Germany,1933,Number of holdings 20-100 ha,29 602,
+Germany,1933,Forest land 20-100 ha,2 851 930,ha
+Germany,1933,Number of holdings 100-500 ha,9 114,
+Germany,1933,Forest land 100-500 ha,4 885 866,ha
+Germany,1933,Number of holdings 500-1000 ha,1 303,
+Germany,1933,Forest land 500-1000 ha,2 373 850,ha
+Germany,1933,Number of holdings 1000-5000 ha,1 611,
+Germany,1949-50,Number of Holdings,2 011 992,Number
+Germany,1949-50,Area of Holdings,21 979 025,Hectares
+Germany,1949-50,Holdings operated under one tenure form - Owned by the holder - Number,840 514,Number
+Germany,1949-50,Holdings operated under one tenure form - Owned by the holder - Area,13 788 896,Hectares
+Germany,1949-50,Holdings operated under one tenure form - Rented from others - Number,108 744,Number
+Germany,1949-50,Holdings operated under one tenure form - Rented from others - Area,881 415,Hectares
+Germany,1949-50,Holdings operated under one tenure form - Operated under Heuerlingsvertrag - Number,6 709,Number
+Germany,1949-50,Holdings operated under one tenure form - Operated under Heuerlingsvertrag - Area,22 993,Hectares
+Germany,1949-50,Holdings operated under one tenure form - Operated under other forms of tenure - Number,77 142,Number
+Germany,1949-50,Holdings operated under one tenure form - Operated under other forms of tenure - Area,54 294,Hectares
+Germany,1949-50,Holdings operated under mixed forms of tenure - Number,978 883,Number
+Germany,1949-50,Holdings operated under mixed forms of tenure - Area,7 231 427,Hectares
+Germany,1949-50,"Total Area in Holdings, by Tenure - Area owned by the holder",19 241 649,Hectares
+Germany,1949-50,"Total Area in Holdings, by Tenure - Area rented from others",2 651 664,Hectares
+Germany,1949-50,"Total Area in Holdings, by Tenure - Area operated under Heuerlingsvertrag",31 418,Hectares
+Germany,1949-50,"Total Area in Holdings, by Tenure - Area operated under other forms of tenure",54 294,Hectares
+Germany,1960,"Number of holdings, All sizes",1 761 114,-
+Germany,1960,"Total area, All sizes",21 369 649,ha
+Germany,1960,"Number of holdings, Holdings without agricultural land",52 030,-
+Germany,1960,"Total area, Holdings without agricultural land",3 345 800,ha
+Germany,1960,"Number of holdings, 0.01 and under 2 ha",550 743,-
+Germany,1960,"Total area, 0.01 and under 2 ha",1 203 700,ha
+Germany,1960,"Number of holdings, 2 and under 5 ha",308 749,-
+Germany,1960,"Total area, 2 and under 5 ha",1 796 500,ha
