@@ -7,7 +7,7 @@ import pandas as pd
 import logging
 
 def format_number_with_commas(value, column_name=""):
-    if column_name.lower() in ['year', 'год', 'year_']:
+    if column_name.lower() in ['year', 'year_']:
         return value
     
     if isinstance(value, str):
@@ -91,7 +91,7 @@ class BatchRAGRunner:
                         import pandas as pd
                         df = pd.DataFrame(rows, columns=headers)
                         
-                        year_col = next((col for col in df.columns if col.lower() in ['year', 'год']), None)
+                        year_col = next((col for col in df.columns if col.lower() in ['year']), None)
                         if year_col:
                             df[year_col] = df[year_col].apply(lambda y: output_years_map.get(int(y), y) if y.isdigit() else y)
 

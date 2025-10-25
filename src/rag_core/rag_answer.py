@@ -25,7 +25,7 @@ Include all available data for each year, even if the parameters differ between 
 Please format your answer as a Markdown table with the following columns:
 | Country | Year | Indicator | Value | Unit |
 
-Group all indicators by country — do not mix countries and do not create extra combinations.
+Group all indicators by country - do not mix countries and do not create extra combinations.
 
 {context}
 

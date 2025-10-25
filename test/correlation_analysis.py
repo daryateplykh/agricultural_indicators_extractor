@@ -49,16 +49,16 @@ def correlation_analysis(df):
     
     if len(df) > 1:
         year_test_corr, year_test_p = pearsonr(df['Start_Year'], df['Test_Data_Points'])
-        correlations.append(('Year ↔ Test Data', year_test_corr, year_test_p))
+        correlations.append(('Year vs Test Data', year_test_corr, year_test_p))
         
         ref_test_corr, ref_test_p = pearsonr(df['Reference_Data_Points'], df['Test_Data_Points'])
-        correlations.append(('Reference ↔ Test Data', ref_test_corr, ref_test_p))
+        correlations.append(('Reference vs Test Data', ref_test_corr, ref_test_p))
         
         range_accuracy_corr, range_accuracy_p = spearmanr(df['Years_In_Range_Percent'], df['Is_Exact_Match'].astype(int))
-        correlations.append(('Temporal Overlap ↔ Accuracy', range_accuracy_corr, range_accuracy_p))
+        correlations.append(('Temporal Overlap vs Accuracy', range_accuracy_corr, range_accuracy_p))
         
         ref_accuracy_corr, ref_accuracy_p = spearmanr(df['Reference_Data_Points'], df['Is_Exact_Match'].astype(int))
-        correlations.append(('Reference Data ↔ Accuracy', ref_accuracy_corr, ref_accuracy_p))
+        correlations.append(('Reference Data vs Accuracy', ref_accuracy_corr, ref_accuracy_p))
     
     return correlations
 
