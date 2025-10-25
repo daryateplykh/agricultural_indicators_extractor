@@ -81,8 +81,6 @@ This repository consists of three main components:
 
 ### 1. Processing PDFs
 
-To process the PDF files located in the `data/` directory and extract text into `output_chunks/`, you can use either Mistral or PaddleOCR.
-
 **Using Mistral OCR:**
 ```bash
 python -m scripts.main_start_mistral
