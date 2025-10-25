@@ -1,0 +1,23 @@
+Country,Year,Indicator,Value,Unit
+Norway,1932,Total number of holdings,299 360,Number
+Norway,1932,Holdings with area up to 0.20 hectares,84 382,Number
+Norway,1932,Holdings with area from 0.21 to 0.5 hectares,29 479,Number
+Norway,1932,Holdings with area from 0.5 to 0.9 hectares,36 141,Number
+Norway,1932,Holdings with area from 0.9 to 1.0 hectares,49 512,Number
+Norway,1932,Holdings with area from 1.0 to 2.0 hectares,56 262,Number
+Norway,1932,Holdings with area from 2.0 to 3.0 hectares,24 789,Number
+Norway,1932,Holdings with area over 3.0 hectares,8 895,Number
+Norway,1948-49,Number of Holdings,349 528,Holdings
+Norway,1948-49,Number of Holdings (>=0.51 ha),213 441,Holdings
+Norway,1948-49,Total Area,7 052 895,Hectares
+Norway,1948-49,Total Area (>=0.51 ha),6 902 709,Hectares
+Norway,1959,Number of holdings,433 920,Number
+Norway,1959,Total area of holdings,7 632 744,ha
+Norway,1959,Holdings up to 0.2 ha,204 664,Number
+Norway,1959,Area of holdings up to 0.2 ha,172 034,ha
+Norway,1959,Holdings 0.21-0.5 ha,30 941,Number
+Norway,1959,Area of holdings 0.21-0.5 ha,81 603,ha
+Norway,1959,Holdings 0.51-1.0 ha,19 414,Number
+Norway,1959,Area of holdings 0.51-1.0 ha,118 111,ha
+Norway,1959,Holdings 1.01-2.0 ha,40 880,Number
+Norway,1959,Area of holdings 1.01-2.0 ha,488 051,ha
