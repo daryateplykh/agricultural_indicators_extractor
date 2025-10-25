@@ -1,4 +1,4 @@
-# RAG Outputs Data Description
+# Dataset Description
 
 This document describes the structure and contents of the extracted agricultural indicators stored in the `data/rag_outputs/` directory.
 

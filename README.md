@@ -67,9 +67,9 @@ To reproduce the results, download the required data from FAO Statistics Divisio
 
 2. Place the contents into the `data/` folder located in the root directory of the repository.
 
-## Data Description
+## Dataset Description
 
-For detailed information about the structure and format of the extracted data, see [DATA_OUTPUTS_DESCRIPTION.md](DATA_OUTPUTS_DESCRIPTION.md).
+For detailed information about the structure and format of the extracted data, see [DATASET_DESCRIPTION.md](DATASET_DESCRIPTION.md).
 
 ## Usage
 
