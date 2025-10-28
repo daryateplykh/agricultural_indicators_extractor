@@ -1,6 +1,6 @@
 Country,Year,Indicator,Value,Unit
 England and Wales,1929,"Employment in Agriculture - All persons (Male, Female)",741 096,Number
 England and Wales,1929,"Employment in Agriculture - Persons working for pay on the holding (Male, Female)",741 096,Number
-England and Wales,1962,"Employment in Agriculture - Total persons (Male, Female)",562 110,
-England and Wales,1962,Employment in Agriculture - Permanent workers (Male),421 160,
-England and Wales,1962,Employment in Agriculture - Permanent workers (Female),56 990,
+England and Wales,1962,"Employment in Agriculture - Total persons (Male, Female)",562 110,Number
+England and Wales,1962,Employment in Agriculture - Permanent workers (Male),421 160,Number
+England and Wales,1962,Employment in Agriculture - Permanent workers (Female),56 990,Number

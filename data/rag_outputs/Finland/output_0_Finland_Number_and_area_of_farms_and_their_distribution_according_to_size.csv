@@ -1,4 +1,37 @@
 Country,Year,Indicator,Value,Unit
+Finland,1929,Holdings 25 ares and under 50 ares - Number,13 581,Holdings
+Finland,1929,Holdings 25 ares and under 50 ares - Area of arable land,11 298,acres
+Finland,1929,Holdings 25 ares and under 50 ares - Total farm area,157 596,acres
+Finland,1929,Holdings 50 ares and under 1 hectare - Number,24 101,Holdings
+Finland,1929,Holdings 50 ares and under 1 hectare - Area of arable land,41 120,acres
+Finland,1929,Holdings 50 ares and under 1 hectare - Total farm area,610 975,acres
+Finland,1929,Holdings 1 hectare and under 3 hectares - Number,49 746,Holdings
+Finland,1929,Holdings 1 hectare and under 3 hectares - Area of arable land,247 880,acres
+Finland,1929,Holdings 1 hectare and under 3 hectares - Total farm area,1 596 674,acres
+Finland,1929,Holdings 3 hectares and under 5 hectares - Number,42 160,Holdings
+Finland,1929,Holdings 3 hectares and under 5 hectares - Area of arable land,324 830,acres
+Finland,1929,Holdings 3 hectares and under 5 hectares - Total farm area,1 495 614,acres
+Finland,1929,Holdings 5 hectares and under 10 hectares - Number,62 616,Holdings
+Finland,1929,Holdings 5 hectares and under 10 hectares - Area of arable land,847 772,acres
+Finland,1929,Holdings 5 hectares and under 10 hectares - Total farm area,4 462 474,acres
+Finland,1929,Holdings 10 hectares and under 15 hectares - Number,38 943,Holdings
+Finland,1929,Holdings 10 hectares and under 15 hectares - Area of arable land,847 776,acres
+Finland,1929,Holdings 10 hectares and under 15 hectares - Total farm area,4 467 772,acres
+Finland,1929,Holdings 15 hectares and under 20 hectares - Number,23 245,Holdings
+Finland,1929,Holdings 15 hectares and under 20 hectares - Area of arable land,823 865,acres
+Finland,1929,Holdings 15 hectares and under 20 hectares - Total farm area,3 934 574,acres
+Finland,1929,Holdings 20 hectares and under 30 hectares - Number,19 264,Holdings
+Finland,1929,Holdings 20 hectares and under 30 hectares - Area of arable land,1 038 632,acres
+Finland,1929,Holdings 20 hectares and under 30 hectares - Total farm area,5 769 363,acres
+Finland,1929,Holdings 30 hectares and under 50 hectares - Number,9 254,Holdings
+Finland,1929,Holdings 30 hectares and under 50 hectares - Area of arable land,1 123 547,acres
+Finland,1929,Holdings 30 hectares and under 50 hectares - Total farm area,7 215 367,acres
+Finland,1929,Holdings 50 hectares and under 100 hectares - Number,2 536,Holdings
+Finland,1929,Holdings 50 hectares and under 100 hectares - Area of arable land,614 268,acres
+Finland,1929,Holdings 50 hectares and under 100 hectares - Total farm area,3 280 078,acres
+Finland,1929,Holdings 100 hectares and above - Number,1 675,Holdings
+Finland,1929,Holdings 100 hectares and above - Area of arable land,344 152,acres
+Finland,1929,Holdings 100 hectares and above - Total farm area,2 027 514,acres
 Finland,1950,Number of Holdings,465 655,Holdings
 Finland,1950,Area of Holdings,15 534 357,Hectares
 Finland,1950,Number of Holdings (2 hectares or more of arable land),261 750,Holdings

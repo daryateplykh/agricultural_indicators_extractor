@@ -1,15 +1,29 @@
 Country,Year,Indicator,Value,Unit
-Germany,1949-50,Employment in Agriculture - All persons,26 018 461,Number
-Germany,1949-50,Holders and unpaid members of their households - Male,1 615 024,Number
-Germany,1949-50,Holders and unpaid members of their households - Female,288 452,Number
-Germany,1949-50,Persons working for pay on the holding - Male,712 522,Number
-Germany,1949-50,Persons working for pay on the holding - Female,391 841,Number
-Germany,1960,Employment in Agriculture - All persons,5 407 333,Number
-Germany,1960,Employment in Agriculture - Male,2 877 967,Number
-Germany,1960,Employment in Agriculture - Female,2 529 366,Number
-Germany,1960,Holders and unpaid members of their households - Total,4 580 594,Number
-Germany,1960,Holders and unpaid members of their households - Male,3 455 257,Number
-Germany,1960,Holders and unpaid members of their households - Female,1 125 337,Number
-Germany,1960,Persons working for pay on the holding - Total,540 733,Number
-Germany,1960,Persons working for pay on the holding - Male,187 298,Number
-Germany,1960,Persons working for pay on the holding - Female,353 435,Number
+Germany,1933,Holders and members of their families,10 217 921,Number of persons
+Germany,1933,Persons working for pay on the holding,2 055 889,Number of persons
+Germany,1949-50,Holders and members of their families,6 018 461,Number of persons
+Germany,1949-50,Holders operating their own holdings,1 903 476,Number of persons
+Germany,1949-50,Holders operating their own holdings - Male,1 615 024,Number of persons
+Germany,1949-50,Holders operating their own holdings - Female,288 452,Number of persons
+Germany,1949-50,Holders not operating their own holdings,73 687,Number of persons
+Germany,1949-50,Holders not operating their own holdings - Male,40 866,Number of persons
+Germany,1949-50,Holders not operating their own holdings - Female,32 177,Number of persons
+Germany,1949-50,Family members permanently employed aged 14 years and over,3 494 457,Number of persons
+Germany,1949-50,Family members permanently employed aged 14 years and over - Male,799 353,Number of persons
+Germany,1949-50,Family members permanently employed aged 14 years and over - Female,2 695 104,Number of persons
+Germany,1949-50,Family members not permanently employed aged 14 years and over,546 841,Number of persons
+Germany,1949-50,Family members not permanently employed aged 14 years and over - Male,275 582,Number of persons
+Germany,1949-50,Family members not permanently employed aged 14 years and over - Female,271 259,Number of persons
+Germany,1949-50,Family members under 14 years of age,90 395,Number of persons
+Germany,1949-50,Persons working for pay on the holding,1 583 865,Number of persons
+Germany,1960,Holders and members of their families,4 580 594,Number of persons
+Germany,1960,Persons working for pay on the holding,826 739,Number of persons
+Germany,1960,Other workers,826 739,Number of persons
+Germany,1960,Other workers - Male,367 729,Number of persons
+Germany,1960,Other workers - Female,459 010,Number of persons
+Germany,1960,Other workers - Permanent workers,332 430,Number of persons
+Germany,1960,Other workers - Permanent workers - Male,219 435,Number of persons
+Germany,1960,Other workers - Permanent workers - Female,112 995,Number of persons
+Germany,1960,Other workers - Nonpermanent workers,494 289,Number of persons
+Germany,1960,Other workers - Nonpermanent workers - Male,138 294,Number of persons
+Germany,1960,Other workers - Nonpermanent workers - Female,355 760,Number of persons

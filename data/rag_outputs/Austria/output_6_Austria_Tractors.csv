@@ -1,3 +1,4 @@
-Country,Year,Indicator,Value,Unit
-Austria,1960,Number of holdings reporting tractors,120 071,Number
-Austria,1960,Number of tractors,10 704,Number
+Country,Year,Indicator,Value,Unit 
+Austria,1930,Number of tractors,730,Number
+Austria,1951,Number of tractors,19 162,Number
+Austria,1960,Number of tractors,129 071,Number

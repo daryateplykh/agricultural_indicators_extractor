@@ -1,5 +1,7 @@
 Country,Year,Indicator,Value,Unit
-Belgium,1929,No data available for Employment in Agriculture,-,-
+Belgium,1929,Employment in Agriculture - Male,26 671 759,Persons
+Belgium,1929,Employment in Agriculture -  Female,14 895 338,Persons
+Belgium,1929,Employment in Agriculture - All persons,41 567 097,Persons
 Belgium,1950,Employment in Agriculture - All persons,582 876,Number
 Belgium,1950,Employment in Agriculture - Holders and unpaid members of their households (Male),296 765,Number
 Belgium,1950,Employment in Agriculture - Holders and unpaid members of their households (Female),281 858,Number

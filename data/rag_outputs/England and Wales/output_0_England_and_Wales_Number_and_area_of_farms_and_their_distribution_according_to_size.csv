@@ -1,3 +1,8 @@
 Country,Year,Indicator,Value,Unit
-England and Wales,1929,Total land area of England and Wales,8 454 087,Acres
-England and Wales,1929,Area of agricultural land on holdings exceeding 1 acre in extent,8 454 087,Acres
+England and Wales,1929,Holdings 1–5 acres,22 944,Number of holdings
+England and Wales,1929,Holdings 5–20 acres,103 975,Number of holdings
+England and Wales,1929,Holdings 20–50 acres,103 910,Number of holdings
+England and Wales,1929,Holdings 50–100 acres,67 093,Number of holdings
+England and Wales,1929,Holdings 100–150 acres,31 945,Number of holdings
+England and Wales,1929,Holdings 150–300 acres,34 925,Number of holdings
+England and Wales,1929,Holdings over 300 acres,30 933,Number of holdings

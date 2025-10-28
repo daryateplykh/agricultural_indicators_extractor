@@ -1,10 +1,7 @@
 Country,Year,Indicator,Value,Unit
-Norway,1932,Holdings fully owned - Number of holdings,255 648,Number
-Norway,1932,Holdings fully owned - Area of holdings,4 230 262,acres
-Norway,1932,Holdings rented from others - Number of holdings,42 712,Number
-Norway,1932,Holdings rented from others - Area of holdings,4 230 262,acres
-Norway,1932,Holdings not owned - Number of holdings,42 712,Number
-Norway,1932,Holdings not owned - Area of holdings,4 230 262,acres
+Norway,1932,Holdings run by owners,255 648,Number of holdings
+Norway,1932,Holdings run by tenants,42 712,Number of holdings
+Norway,1932,Total holdings,299 360,Number of holdings
 Norway,1948-49,Holdings fully owned,194 841,Number
 Norway,1948-49,Holdings rented from others,15 033,Number
 Norway,1948-49,Holdings operated under mixed forms of tenure,3 567,Number

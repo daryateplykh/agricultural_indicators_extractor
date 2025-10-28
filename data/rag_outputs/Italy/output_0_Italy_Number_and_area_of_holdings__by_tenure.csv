@@ -1,4 +1,12 @@
 Country,Year,Indicator,Value,Unit
+Italy,1930,Holdings run by owners,2 478 412,Number of Holdings
+Italy,1930,Holdings run by owners Area,37 275 038,Acres
+Italy,1930,Holdings leased by owners,566 778,Number of Holdings
+Italy,1930,Holdings leased by owners Area,8 247 167,Acres
+Italy,1930,Holdings occupied on share system,429 044,Number of Holdings
+Italy,1930,Holdings occupied on share system Area,9 373 221,Acres
+Italy,1930,Holdings of mixed tenure,721 846,Number of Holdings
+Italy,1930,Holdings of mixed tenure Area,9 974 996,Acres
 Italy,1961,Holdings fully owned,3 160 270,Number of Holdings
 Italy,1961,Holdings fully owned Area,19 392 995,Hectares
 Italy,1961,Holdings rented from others,371 396,Number of Holdings

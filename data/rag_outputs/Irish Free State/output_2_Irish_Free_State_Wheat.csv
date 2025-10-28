@@ -1,2 +1,5 @@
 Country,Year,Indicator,Value,Unit
-Irish Free State,1929,Wheat - Area (total),28 583,acres
+Irish Free State,1929,Wheat (winter) - Area,12 257,acres
+Irish Free State,1929,Wheat (winter) - Production,32 227,metric tons
+Irish Free State,1929,Wheat (spring) - Area,16 326,acres
+Irish Free State,1929,Wheat (spring) - Production,32 227,metric tons

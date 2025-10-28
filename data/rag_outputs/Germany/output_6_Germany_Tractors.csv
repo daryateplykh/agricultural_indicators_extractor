@@ -1,3 +1,7 @@
 Country,Year,Indicator,Value,Unit
-Germany,1949-50,Tractors,76 699,Number
-Germany,1960,Tractors,885 766,
+Germany,1933,Number of holdings reporting tractors,23 917,Holdings
+Germany,1933,Total number of tractors,24 183,Tractors
+Germany,1949-50,Number of holdings reporting tractors,70 461,Holdings
+Germany,1949-50,Total number of tractors,76 699,Tractors
+Germany,1960,Number of holdings reporting tractors,799 885,Holdings
+Germany,1960,Total number of tractors,885 766,Tractors

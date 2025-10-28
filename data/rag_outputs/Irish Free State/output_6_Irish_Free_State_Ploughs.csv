@@ -1,2 +1,5 @@
 Country,Year,Indicator,Value,Unit
-Irish Free State,1929,Ploughs,82 663,Number
+Irish Free State,1929,Ploughs (multiple furrow ploughs, tractor drawn),19 474,number
+Irish Free State,1929,Ploughs (single furrow ploughs),92 194,number
+Irish Free State,1929,Drill ploughs,275 551,number
+Irish Free State,1929,Total ploughs,387 219,number

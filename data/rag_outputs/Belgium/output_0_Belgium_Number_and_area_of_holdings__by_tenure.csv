@@ -1,4 +1,16 @@
 Country,Year,Indicator,Value,Unit
+Belgium,1929,Number of holdings run by owner as to the whole area,469 044,Number
+Belgium,1929,Area of holdings run by owner as to the whole area,2 028 894,Acres
+Belgium,1929,Number of holdings run by owner as to more than half,86 073,Number
+Belgium,1929,Area of holdings run by owner as to more than half,2 028 894,Acres
+Belgium,1929,Total number of holdings run by owner,545 117,Number
+Belgium,1929,Total area of holdings run by owner,2 028 894,Acres
+Belgium,1929,Number of holdings leased as to the whole area,430 613,Number
+Belgium,1929,Area of holdings leased as to the whole area,2 915 301,Acres
+Belgium,1929,Number of holdings leased as to more than half,155 416,Number
+Belgium,1929,Area of holdings leased as to more than half,2 915 301,Acres
+Belgium,1929,Total number of holdings leased,586 029,Number
+Belgium,1929,Total area of holdings leased,2 915 301,Acres
 Belgium,1950,Number of holdings fully owned,49 857,Number
 Belgium,1950,Area of holdings fully owned,208 268,Hectares
 Belgium,1950,Number of holdings rented from others,76 882,Number

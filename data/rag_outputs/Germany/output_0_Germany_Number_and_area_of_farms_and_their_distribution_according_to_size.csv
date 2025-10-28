@@ -1,36 +1,41 @@
 Country,Year,Indicator,Value,Unit
-Germany,1933,Number of holdings under 5 ha,757 412,
-Germany,1933,Forest land under 5 ha,2 450 206,ha
-Germany,1933,Number of holdings 5-20 ha,145 800,
-Germany,1933,Forest land 5-20 ha,3 184 264,ha
-Germany,1933,Number of holdings 20-100 ha,29 602,
-Germany,1933,Forest land 20-100 ha,2 851 930,ha
-Germany,1933,Number of holdings 100-500 ha,9 114,
-Germany,1933,Forest land 100-500 ha,4 885 866,ha
-Germany,1933,Number of holdings 500-1000 ha,1 303,
-Germany,1933,Forest land 500-1000 ha,2 373 850,ha
-Germany,1933,Number of holdings 1000-5000 ha,1 611,
-Germany,1949-50,Number of Holdings,2 011 992,Number
-Germany,1949-50,Area of Holdings,21 979 025,Hectares
-Germany,1949-50,Holdings operated under one tenure form - Owned by the holder - Number,840 514,Number
-Germany,1949-50,Holdings operated under one tenure form - Owned by the holder - Area,13 788 896,Hectares
-Germany,1949-50,Holdings operated under one tenure form - Rented from others - Number,108 744,Number
-Germany,1949-50,Holdings operated under one tenure form - Rented from others - Area,881 415,Hectares
-Germany,1949-50,Holdings operated under one tenure form - Operated under Heuerlingsvertrag - Number,6 709,Number
-Germany,1949-50,Holdings operated under one tenure form - Operated under Heuerlingsvertrag - Area,22 993,Hectares
-Germany,1949-50,Holdings operated under one tenure form - Operated under other forms of tenure - Number,77 142,Number
-Germany,1949-50,Holdings operated under one tenure form - Operated under other forms of tenure - Area,54 294,Hectares
-Germany,1949-50,Holdings operated under mixed forms of tenure - Number,978 883,Number
-Germany,1949-50,Holdings operated under mixed forms of tenure - Area,7 231 427,Hectares
-Germany,1949-50,"Total Area in Holdings, by Tenure - Area owned by the holder",19 241 649,Hectares
-Germany,1949-50,"Total Area in Holdings, by Tenure - Area rented from others",2 651 664,Hectares
-Germany,1949-50,"Total Area in Holdings, by Tenure - Area operated under Heuerlingsvertrag",31 418,Hectares
-Germany,1949-50,"Total Area in Holdings, by Tenure - Area operated under other forms of tenure",54 294,Hectares
-Germany,1960,"Number of holdings, All sizes",1 761 114,-
+Germany,1933,Holdings under 5 acres - Number,2 867 489,Holdings
+Germany,1933,Holdings under 5 acres - Area,134 907,acres
+Germany,1933,Holdings 5 acres and under 10 acres - Number,1 021 356,Holdings
+Germany,1933,Holdings 5 acres and under 10 acres - Area,170 567,acres
+Germany,1933,Holdings 10 acres and under 25 acres - Number,957 055,Holdings
+Germany,1933,Holdings 10 acres and under 25 acres - Area,552 807,acres
+Germany,1933,Holdings 25 acres and under 50 acres - Number,812 643,Holdings
+Germany,1933,Holdings 25 acres and under 50 acres - Area,717 142,acres
+Germany,1933,Total smallholdings up to 50 acres - Number,5 578 463,Holdings
+Germany,1933,Total smallholdings up to 50 acres - Area,1 575 423,acres
+Germany,1933,Holdings 0.51 ha and under 1 ha - Number,366 839,Holdings
+Germany,1933,Holdings 0.51 ha and under 1 ha - Area,664 894,acres
+Germany,1933,Holdings 1 ha and under 2 ha - Number,486 739,Holdings
+Germany,1933,Holdings 1 ha and under 2 ha - Area,1 653 661,acres
+Germany,1933,Holdings 2 ha and under 5 ha - Number,629 952,Holdings
+Germany,1933,Holdings 2 ha and under 5 ha - Area,4 018 783,acres
+Germany,1933,Holdings 5 ha and under 10 ha - Number,461 956,Holdings
+Germany,1933,Holdings 5 ha and under 10 ha - Area,5 531 748,acres
+Germany,1933,Holdings 10 ha and under 20 ha - Number,267 310,Holdings
+Germany,1933,Holdings 10 ha and under 20 ha - Area,6 095 366,acres
+Germany,1933,Holdings 20 ha and under 50 ha - Number,145 572,Holdings
+Germany,1933,Holdings 20 ha and under 50 ha - Area,8 595 334,acres
+Germany,1933,Holdings 50 ha and under 100 ha - Number,10 623,Holdings
+Germany,1933,Holdings 50 ha and under 100 ha - Area,8 189 823,acres
+Germany,1933,Holdings 100 ha and under 200 ha - Number,3 919,Holdings
+Germany,1933,Holdings 100 ha and under 200 ha - Area,4 662 502,acres
+Germany,1933,Holdings 200 ha and under 500 ha - Number,1 807,Holdings
+Germany,1933,Holdings 200 ha and under 500 ha - Area,4 184 076,acres
+Germany,1933,Holdings 500 ha and more - Number,1 877,Holdings
+Germany,1933,Holdings 500 ha and more - Area,18 476 096,acres
+Germany,1933,Total holdings of 0.51 ha and over - Number,2 075 577,Holdings
+Germany,1933,Total holdings of 0.51 ha and over - Area,104 690 690,acres
+Germany,1960,"Number of holdings, All sizes",1 761 114,Holdings
 Germany,1960,"Total area, All sizes",21 369 649,ha
-Germany,1960,"Number of holdings, Holdings without agricultural land",52 030,-
+Germany,1960,"Number of holdings, Holdings without agricultural land",52 030,Holdings
 Germany,1960,"Total area, Holdings without agricultural land",3 345 800,ha
-Germany,1960,"Number of holdings, 0.01 and under 2 ha",550 743,-
+Germany,1960,"Number of holdings, 0.01 and under 2 ha",550 743,Holdings
 Germany,1960,"Total area, 0.01 and under 2 ha",1 203 700,ha
-Germany,1960,"Number of holdings, 2 and under 5 ha",308 749,-
+Germany,1960,"Number of holdings, 2 and under 5 ha",308 749,Holdings
 Germany,1960,"Total area, 2 and under 5 ha",1 796 500,ha

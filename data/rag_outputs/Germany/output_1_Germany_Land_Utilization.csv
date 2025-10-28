@@ -1,4 +1,12 @@
 Country,Year,Indicator,Value,Unit
+Germany,1933,Arable land,50 769 050,acres
+Germany,1933,Permanent meadows,13 668 968,acres
+Germany,1933,Pastures,6 561 955,acres
+Germany,1933,Gardens,1 486 625,acres
+Germany,1933,Vines,141 690,acres
+Germany,1933,Fruit crops,16 294,acres
+Germany,1933,Agricultural area,72 642 582,acres
+Germany,1933,Woods and forests,31 222 447,acres
 Germany,1949-50,Land Utilization - Cropland,7 964 750,hectares
 Germany,1949-50,Land Utilization - Arable land,7 663 602,hectares
 Germany,1949-50,Land Utilization - Land for growing vines,58 237,hectares

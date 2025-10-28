@@ -1,10 +1,10 @@
-Year,Indicator,Value,Unit
-1931,Total area in occupied farms,163 114 034,acres
-1931,Total land in vacant and abandoned farms,5 289 166,acres
-1931,Total land not in farms,1 112 904 768,acres
-1931,Total area,1 281 307 968,acres
-1931,Area of orchards,268 925,acres
-1931,Area of vineyards,16 159,acres
-1931,Area of small fruits,18 822,acres
-1931,Area of maple trees,24 216 891,acres
+Country,Year,Indicator,Value,Unit
+Canada,1931,Total area in occupied farms,163 114 034,acres
+Canada,1931,Total land in vacant and abandoned farms,5 289 166,acres
+Canada,1931,Total land not in farms,1 112 904 768,acres
+Canada,1931,Total area,1 281 307 968,acres
+Canada,1931,Area of orchards,268 925,acres
+Canada,1931,Area of vineyards,16 159,acres
+Canada,1931,Area of small fruits,18 822,acres
+Canada,1931,Area of maple trees,24 216 891,acres
 
