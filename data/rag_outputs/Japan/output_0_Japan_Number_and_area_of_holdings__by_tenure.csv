@@ -1,4 +1,8 @@
 Country,Year,Indicator,Value,Unit
+Japan,1929,Holdings run by owners,1,737,438,number
+Japan,1929,Holdings run by tenants,1,478,214,number
+Japan,1929,Mixed holdings,2,359,931,number
+Japan,1929,Total holdings,5,575,583,number
 Japan,1949,Number of holdings fully owned,3 821 531,Number
 Japan,1949,Area of holdings fully owned,4 332 715,Hectares
 Japan,1949,Number of holdings rented from others,312 364,Number

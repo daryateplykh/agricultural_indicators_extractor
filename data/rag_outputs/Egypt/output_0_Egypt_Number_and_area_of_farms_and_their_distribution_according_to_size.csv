@@ -1,22 +1,35 @@
 Country,Year,Indicator,Value,Unit
-Egypt,1929-30,Number of holdings of less than 1 hidden,234 607,-
-Egypt,1929-30,Total area of holdings of less than 1 hidden,36.20,%
-Egypt,1929-30,Number of holdings of less than 2 hidden,163 389,-
-Egypt,1929-30,Total area of holdings of less than 2 hidden,23.20,%
-Egypt,1929-30,Number of holdings of 2 hidden,75 500,-
-Egypt,1929-30,Total area of holdings of 2 hidden,11.20,%
-Egypt,1929-30,Number of holdings of 3 hidden,44 799,-
-Egypt,1929-30,Total area of holdings of 3 hidden,6.50,%
-Egypt,1929-30,Number of holdings of 4 hidden,25 401,-
-Egypt,1929-30,Total area of holdings of 4 hidden,4.40,%
-Egypt,1929-30,Total number of holdings of less than 5 hidden,596 577,-
-Egypt,1929-30,Total area of holdings of less than 5 hidden,82,%
-Egypt,1929-30,Number of holdings of 5 and less than 10 hidden,10 977,-
-Egypt,1929-30,Total area of holdings of 5 and less than 10 hidden,9.30,%
-Egypt,1929-30,Number of holdings of 10 hidden,20 073,-
-Egypt,1929-30,Total area of holdings of 10 hidden,4.30,%
-Egypt,1929-30,Number of holdings of 20 hidden,14 195,-
-Egypt,1929-30,Total area of holdings of 20 hidden,2.20,%
-Egypt,1929-30,Total number of holdings of 5 to less than 50 hidden,191 267,-
-Egypt,1929-30,Total area of holdings of 5 to less than 50 hidden,15.60,%
-Egypt,1929-30,Number of holdings of 50 and less than 100 hidden,4 754,-
+Egypt,1929-30,Holdings of less than 1 feddan,436 673,number
+Egypt,1929-30,Area of holdings of less than 1 feddan,140 498,acres
+Egypt,1929-30,Holdings of 1 and less than 2 feddans,285 623,number
+Egypt,1929-30,Area of holdings of 1 and less than 2 feddans,384 392,acres
+Egypt,1929-30,Holdings of 2 and less than 3 feddans,183 682,number
+Egypt,1929-30,Area of holdings of 2 and less than 3 feddans,468 289,acres
+Egypt,1929-30,Holdings of 3 and less than 4 feddans,126 189,number
+Egypt,1929-30,Area of holdings of 3 and less than 4 feddans,440 382,acres
+Egypt,1929-30,Holdings of 4 and less than 5 feddans,34 189,number
+Egypt,1929-30,Area of holdings of 4 and less than 5 feddans,175 099,acres
+Egypt,1929-30,Total holdings of less than 5 feddans,1 066 356,number
+Egypt,1929-30,Total area of holdings of less than 5 feddans,1 608 659,acres
+Egypt,1929-30,Holdings of 5 and less than 10 feddans,110 960,number
+Egypt,1929-30,Area of holdings of 5 and less than 10 feddans,765 373,acres
+Egypt,1929-30,Holdings of 10 and less than 20 feddans,61 384,number
+Egypt,1929-30,Area of holdings of 10 and less than 20 feddans,850 777,acres
+Egypt,1929-30,Holdings of 20 and less than 30 feddans,37 505,number
+Egypt,1929-30,Area of holdings of 20 and less than 30 feddans,887 359,acres
+Egypt,1929-30,Total holdings of 5 to less than 30 feddans,209 849,number
+Egypt,1929-30,Total area of holdings of 5 to less than 30 feddans,2 503 509,acres
+Egypt,1929-30,Holdings of 30 and less than 50 feddans,10 750,number
+Egypt,1929-30,Area of holdings of 30 and less than 50 feddans,406 311,acres
+Egypt,1929-30,Holdings of 50 and less than 100 feddans,5 654,number
+Egypt,1929-30,Area of holdings of 50 and less than 100 feddans,397 784,acres
+Egypt,1929-30,Holdings of 100 and less than 200 feddans,3 180,number
+Egypt,1929-30,Area of holdings of 100 and less than 200 feddans,445 584,acres
+Egypt,1929-30,Holdings of 200 and less than 500 feddans,1 602,number
+Egypt,1929-30,Area of holdings of 200 and less than 500 feddans,487 764,acres
+Egypt,1929-30,Holdings of 500 and less than 1000 feddans,660,number
+Egypt,1929-30,Area of holdings of 500 and less than 1000 feddans,469 354,acres
+Egypt,1929-30,Holdings of 1000 feddans and over,1 096,number
+Egypt,1929-30,Area of holdings of 1000 feddans and over,489 643,acres
+Egypt,1929-30,Total holdings of 30 feddans and over,15 842,number
+Egypt,1929-30,Total area of holdings of 30 feddans and over,3 096 439,acres

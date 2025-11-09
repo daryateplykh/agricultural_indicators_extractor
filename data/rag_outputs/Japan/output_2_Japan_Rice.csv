@@ -1,9 +1,9 @@
 Country,Year,Indicator,Value,Unit
-Japan,1929,Rice - Area (total),2 868 124,acres
-Japan,1929,Rice - Production,107 426 256,"1,000 lb."
-Japan,1949,Rice - Number of holdings,5 434 719,Holdings
-Japan,1949,Rice - Area (total),2 768 672,Hectares
+Japan,1929,Rice - Area,7 868 124,acres
+Japan,1929,Rice - Production,107 426 256,1000 lb
+Japan,1929,Rice - Number of holdings reporting,5 434 719,Holdings
+Japan,1949,Rice - Area,2 768 672,Hectares
 Japan,1949,Rice - Production,8 588 381,Metric tons
-Japan,1959-60,Rice - Number of holdings,5 363 668,Holdings
+Japan,1959-60,Rice - Number of holdings reporting,5 363 668,Holdings
 Japan,1959-60,Rice - Area,3 257 722,Hectares
 Japan,1959-60,Rice - Production,12 487 123,Metric tons

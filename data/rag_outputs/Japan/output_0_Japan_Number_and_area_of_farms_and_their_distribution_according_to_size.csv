@@ -1,30 +1,18 @@
 Country,Year,Indicator,Value,Unit
-Japan,1929,Total number of holdings,5 575 583,-
-Japan,1929,Total area of arable land,12 436 377,hectares
-Country,Year,Size of Arable Land (hectares),Number of Holdings,Percentage of Total Holdings
-Japan,1929,Under 0.00,1 038 153,34.80
-Japan,1929,0.30 and under 0.99,1 099 842,34.10
-Japan,1929,1.90 and under 1.90,1 220 152,21.90
-Japan,1929,2.90 and under 2.90,318 037,5.70
-Japan,1929,3.90 and under 3.90,138 169,2.50
-Japan,1929,4.96 hectares and above,69 240,1.20
-Japan,1929,Total,5 575 583,100
-Japan,1949,Number of Holdings - All sizes of holdings,16 176 419,-
+Japan,1929,Holdings under 0.50 hectares,1,938,155,number
+Japan,1929,Holdings 0.50–0.99 hectares,1,099,842,number
+Japan,1929,Holdings 0.99–1.98 hectares,1,220,132,number
+Japan,1929,Holdings 1.98–2.98 hectares,318,037,number
+Japan,1929,Holdings 2.98–4.96 hectares,130,169,number
+Japan,1929,Holdings 4.96 hectares and above,69,248,number
+Japan,1949,Number of Holdings - All sizes of holdings,16 176 419,Holdings
 Japan,1949,Area - All sizes of holdings,10 128 832,hectares
-Japan,1949,Percentage distribution of Number - All sizes of holdings,-,-
-Japan,1949,Percentage distribution of Area - All sizes of holdings,100,%
-Japan,1949,Number of Holdings - Under 0.99 hectare,14 145 874,-
+Japan,1949,Number of Holdings - Under 0.99 hectare,14 145 874,Holdings
 Japan,1949,Area - Under 0.99 hectare,3 612 357,hectares
-Japan,1949,Percentage distribution of Number - Under 0.99 hectare,-,-
-Japan,1949,Percentage distribution of Area - Under 0.99 hectare,80.20,%
-Japan,1949,Number of Holdings - 0.99 hectare and over,2 030 545,-
+Japan,1949,Number of Holdings - 0.99 hectare and over,2 030 545,Holdings
 Japan,1949,Area - 0.99 hectare and over,6 516 475,hectares
-Japan,1949,Percentage distribution of Number - 0.99 hectare and over,100,%
-Japan,1949,Percentage distribution of Area - 0.99 hectare and over,9.10,%
-Japan,1949,Number of Holdings - 0.99 and under 4.96 hectares,1 936 893,-
+Japan,1949,Number of Holdings - 0.99 and under 4.96 hectares,1 936 893,Holdings
 Japan,1949,Area - 0.99 and under 4.96 hectares,5 278 192,hectares
-Japan,1949,Percentage distribution of Number - 0.99 and under 4.96 hectares,95.40,%
-Japan,1949,Percentage distribution of Area - 0.99 and under 4.96 hectares,6.40,
 Japan,1959-60,Number of holdings,6 056 534,Holdings
 Japan,1959-60,Agricultural area,7 141 941,Hectares
 Japan,1959-60,Holdings under 0.99 ha,3 911 695,Holdings

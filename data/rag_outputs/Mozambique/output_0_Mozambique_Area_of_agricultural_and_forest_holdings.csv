@@ -1,18 +1,21 @@
 Country,Year,Indicator,Value,Unit
-Mozambique,1930,Holdings not over 1 ha (2.5 acres) - Number,9,Number
-Mozambique,1930,Holdings over 1 ha and up to 5 ha (2.5–12 acres) - Number,137,Number
-Mozambique,1930,Holdings over 5 ha and up to 10 ha (12–25 acres) - Number,70,Number
-Mozambique,1930,Holdings over 10 ha and up to 20 ha (25–49 acres) - Number,46,Number
-Mozambique,1930,Holdings over 20 ha and up to 50 ha (49–124 acres) - Number,121,Number
-Mozambique,1930,Holdings over 50 ha and up to 100 ha (124–247 acres) - Number,90,Number
-Mozambique,1930,Holdings over 100 ha and up to 200 ha (247–494 acres) - Number,84,Number
-Mozambique,1930,Holdings over 200 ha and up to 500 ha (494–1,236 acres) - Number,195,Number
-Mozambique,1930,Holdings over 500 ha and up to 1,000 ha (1,236–2,471 acres) - Number,167,Number
-Mozambique,1930,Holdings over 1,000 ha and up to 2,500 ha (2,471–6,178 acres) - Number,216,Number
-Mozambique,1930,Holdings over 2,500 ha and up to 5,000 ha (6,178–12,355 acres) - Number,102,Number
-Mozambique,1930,Holdings over 5,000 ha and up to 10,000 ha (12,355–24,711 acres) - Number,40,Number
-Mozambique,1930,Holdings over 10,000 ha and up to 20,000 ha (24,711–49,422 acres) - Number,16,Number
-Mozambique,1930,Holdings over 20,000 ha and up to 30,000 ha (49,422–74,133 acres) - Number,6,Number
-Mozambique,1930,Holdings over 30,000 ha and up to 40,000 ha (74,133–98,844 acres) - Number,3,Number
-Mozambique,1930,Holdings over 40,000 ha and up to 50,000 ha (98,844–123,554 acres) - Number,3,Number
-Mozambique,1930,Total number of holdings,1 371,Number
+Mozambique,1930,Total area of Lourenço Marques,19 646 000,acres
+Mozambique,1930,Area run by Europeans in Lourenço Marques,681 235,acres
+Mozambique,1930,Total area of Inhambane,13 497 500,acres
+Mozambique,1930,Area run by Europeans in Inhambane,656 463,acres
+Mozambique,1930,Total area of Tete,31 060 500,acres
+Mozambique,1930,Area run by Europeans in Tete,15 229,acres
+Mozambique,1930,Total area of Quelimane,31 060 500,acres
+Mozambique,1930,Area run by Europeans in Quelimane,1 063 096,acres
+Mozambique,1930,Total area of Mozambique district,19 279 800,acres
+Mozambique,1930,Area run by Europeans in Mozambique district,503 093,acres
+Mozambique,1930,Total area of Cabo Delgado,26 279 893,acres
+Mozambique,1930,Area run by Europeans in Cabo Delgado,482 332,acres
+Mozambique,1930,Total area of Niassa,19 279 800,acres
+Mozambique,1930,Area run by Europeans in Niassa,408 623,acres
+Mozambique,1930,Total area of territories administered directly by the Government,137 940 593,acres
+Mozambique,1930,Area run by Europeans in government-administered territories,3 760 975,acres
+Mozambique,1930,Total area of Manica and Sofala,33 213 406,acres
+Mozambique,1930,Area run by Europeans in Manica and Sofala,1 019 275,acres
+Mozambique,1930,Total area of the whole Colony,190 553 900,acres
+Mozambique,1930,Area run by Europeans in the whole Colony,4 780 075,acres
