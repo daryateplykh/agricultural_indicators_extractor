@@ -1,11 +1,10 @@
 Country,Year,Indicator,Value,Unit
 Uruguay,1929,Maize - Area (total),436 721,acres
 Uruguay,1929,Maize - Production,116 614,"1,000 lb."
-Uruguay,1929,Maize - Number of holdings reporting,Not available,-
 Uruguay,1950-51,Maize grown only for grain - Area (hectares),352 604,hectares
 Uruguay,1950-51,Maize grown only for grain - Production (metric tons),278 458,metric tons
 Uruguay,1950-51,Other maize - Area (hectares),730,hectares
 Uruguay,1950-51,Other maize - Production (metric tons),175,metric tons
-Uruguay,1961,Maize - Number of holdings reporting,269 295,-
+Uruguay,1961,Maize - Number of holdings reporting,269 295,holdings
 Uruguay,1961,Maize - Area (total),284 480,hectares
 Uruguay,1961,Maize - Production,223 723,metric tons

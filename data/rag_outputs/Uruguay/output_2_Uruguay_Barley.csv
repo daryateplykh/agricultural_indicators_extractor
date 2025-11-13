@@ -1,9 +1,8 @@
 Country,Year,Indicator,Value,Unit
 Uruguay,1929,Barley - Area (total),15 215,acres
 Uruguay,1929,Barley - Production,12 885,"1,000 lb."
-Uruguay,1950-51,Barley - Number of holdings reporting,No data available,
-Uruguay,1950-51,Barley - Area (total),No data available,
-Uruguay,1950-51,Barley - Production,No data available,
-Uruguay,1961,Barley - Number of holdings reporting,30 834,-
+Uruguay,1950-51,Barley - Area (total),27 848,hectares
+Uruguay,1950-51,Barley - Production,25 701,metric tons
+Uruguay,1961,Barley - Number of holdings reporting,30 834,holdings
 Uruguay,1961,Barley - Area (total),22 835,hectares
 Uruguay,1961,Barley - Production,22 835,metric tons

@@ -1,10 +1,8 @@
 Country,Year,Indicator,Value,Unit
 Canada,1931,Number of holdings reporting,22 930,Holdings
-Canada,1931,Area (total),129 091,acres
+Canada,1931,Area (total),91 379,acres
 Canada,1931,Production,217 417,"1,000 lb"
 Canada,1950-51,Number of holdings reporting,42 133,Holdings
 Canada,1950-51,Area (total),148 258,hectares
-Canada,1950-51,Production,-,metric tons
 Canada,1961,Number of holdings reporting,21 354,Holdings
 Canada,1961,Area (total),164 775,hectares
-Canada,1961,Production,-,metric tons
