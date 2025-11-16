@@ -1,6 +1,8 @@
 # agricultural_indicators_extractor
 This repository accompanies the paper *"A longitudinal database of agricultural indicators from 1930 to 1960"*.
 
+The paper is included in this repository at `data/A_longitudinal_database_of_agricultural_indicators_from _1930_to_1960.pdf`.
+
 ## Abstract
 Agricultural indicators are important for understanding long-term changes in farming systems. However, historical data, such as agricultural reports, are typically contained in non-machine-readable documents and are unavailable in a structured format, which makes their analysis difficult. Here, we present a new dataset covering 130 countries and 275 harmonized agricultural indicators from 1930 to 1960. Our dataset includes 12,090 unique country–year observations and includes key indicators of farm structure and agricultural intensity, such as farm population, number and area of holdings, and crop area and production (e.g., rye and millet). We created the dataset using a large language model (LLM), which we used to extract structured data from archived FAO World Census of Agriculture (WCA) reports. We validated the LLM-based pipeline a manual validation, where the LLM pipeline achieves an accuracy of 80.3\%. We further compared our LLM pipeline against external databases, which are less comprehensive and are often derived from secondary sources rather than the raw country reports. Our dataset fills important gaps in existing historical data, as many values were previously missing or unstructured. Overall, the result represents a new resource for agricultural monitoring, enabling more comprehensive comparisons across countries and supporting policy development in the context of environmental change and long-term sustainable development planning.
 
