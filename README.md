@@ -13,7 +13,7 @@ Rag_Pipline_Thesis_Teplykh/
 ├── chroma/                  # ChromaDB vector store
 ├── config.py                # Configuration file (paths, countries, years)
 ├── data/                    # Input PDF files
-│   └── rag_outputs/         # RAG query results and CSV outputs
+├── rag_outputs/             # RAG query results and CSV outputs
 ├── scripts/                 # Main scripts to run the pipeline
 │   ├── main_start_mistral.py  # Main script to process PDFs with Mistral
 │   ├── main_start_paddle.py   # Main script to process PDFs with PaddleOCR

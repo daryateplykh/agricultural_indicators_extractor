@@ -1,6 +1,6 @@
 # Dataset Description
 
-This document describes the structure and contents of the extracted agricultural indicators stored in the `data/rag_outputs/` directory.
+This document describes the structure and contents of the extracted agricultural indicators stored in the `/rag_outputs/` directory.
 
 ## Overview
 
@@ -9,7 +9,7 @@ The `rag_outputs` directory contains structured CSV files with agricultural indi
 ## Directory Structure
 
 ```
-data/rag_outputs/
+rag_outputs/
 ├── {Country}/
 │   ├── output_0_{Country}_{Indicator}.csv
 │   ├── output_1_{Country}_{Indicator}.csv
